@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_chart">
+        <item>"#000000"</item>
+        <item>"#333333"</item>
+        <item>"#666666"</item>
+        <item>"#999999"</item>
+        <item>"#F6B016"</item>
+        <item>"#4CABFD"</item>
+        <item>"#8AC9FF"</item>
+        <item>"#FF8383"</item>
+        <item>"#FC403E"</item>
+        <item>"#EF4164"</item>
+        <item>"#F96284"</item>
+        <item>"#F1D41C"</item>
+        <item>"#F3A727"</item>
+        <item>"#C1E533"</item>
+        <item>"#C0E951"</item>
+        <item>"#43B872"</item>
+        <item>"#44CE78"</item>
+        <item>"#3DD1AE"</item>
+        <item>"#FFB530"</item>
+        <item>"#F6702B"</item>
+        <item>"#EB9D37"</item>
+    </string-array>
+</resources>
