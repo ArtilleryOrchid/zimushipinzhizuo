@@ -36,7 +36,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     }
 
     //透明状态栏
-    public static void makeStatusBarTransparent(Activity activity) {
+    public  void makeStatusBarTransparent(Activity activity) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             return;
         }
@@ -47,8 +47,24 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
             int option = window.getDecorView().getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
             window.getDecorView().setSystemUiVisibility(option);
             window.setStatusBarColor(Color.TRANSPARENT);
+            setDarkStatusIcon(true);
         } else {
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
+    }
+
+    protected void setDarkStatusIcon(boolean dark) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            View decorView = getWindow().getDecorView();
+            if (decorView == null) return;
+
+            int vis = decorView.getSystemUiVisibility();
+            if (dark) {
+                vis |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            } else {
+                vis &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            }
+            decorView.setSystemUiVisibility(vis);
         }
     }
 

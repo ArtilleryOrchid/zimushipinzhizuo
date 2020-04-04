@@ -1,7 +1,5 @@
 package com.keyi.zimushipinzhizuo.ui.activity.logout;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
