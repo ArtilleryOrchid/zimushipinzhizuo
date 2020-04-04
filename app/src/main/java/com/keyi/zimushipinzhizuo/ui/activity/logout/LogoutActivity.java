@@ -1,4 +1,4 @@
-package com.keyi.zimushipinzhizuo.mvp.activity.login;
+package com.keyi.zimushipinzhizuo.ui.activity.logout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,11 +6,12 @@ import android.os.Bundle;
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
 
-public class SplashActivity extends BaseActivity {
+public class LogoutActivity extends BaseActivity {
+
 
     @Override
     public int layoutID() {
-        return R.layout.activity_splash;
+        return R.layout.activity_logout;
     }
 
     @Override
