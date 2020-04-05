@@ -12,6 +12,7 @@ import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
