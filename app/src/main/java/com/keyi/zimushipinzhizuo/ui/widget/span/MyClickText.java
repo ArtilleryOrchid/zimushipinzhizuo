@@ -12,9 +12,11 @@ import com.keyi.zimushipinzhizuo.R;
 
 public class MyClickText extends ClickableSpan {
     private Context context;
+    private String type;
 
-    public MyClickText(Context context) {
+    public MyClickText(Context context, String type) {
         this.context = context;
+        this.type = type;
     }
 
     @Override
@@ -27,7 +29,7 @@ public class MyClickText extends ClickableSpan {
 
     @Override
     public void onClick(View widget) {
-        Toast.makeText(context,"发生了点击效果",Toast.LENGTH_SHORT).show();
+        Toast.makeText(context,type + " 发生了点击效果 ",Toast.LENGTH_SHORT).show();
     }
 
 
