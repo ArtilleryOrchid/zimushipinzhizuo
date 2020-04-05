@@ -30,7 +30,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         //当FitsSystemWindows设置 true 时，会在屏幕最上方预留出状态栏高度的 padding
-        StatusBarUtils.setRootViewFitsSystemWindows(this,true);
+        StatusBarUtils.setRootViewFitsSystemWindows(this, true);
         //设置状态栏透明
         StatusBarUtils.setTranslucentStatus(this);
         //一般的手机的状态栏文字和图标都是白色的, 可如果你的应用也是纯白色的, 或导致状态栏文字看不清
@@ -38,7 +38,7 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         if (!StatusBarUtils.setStatusBarDarkTheme(this, true)) {
             //如果不支持设置深色风格 为了兼容总不能让状态栏白白的看不清, 于是设置一个状态栏颜色为半透明,
             //这样半透明+白=灰, 状态栏的文字能看得清
-            StatusBarUtils.setStatusBarColor(this,0x55000000);
+            StatusBarUtils.setStatusBarColor(this, 0x55000000);
         }
         setContentView(layoutID());
         setUpDagger();
@@ -46,42 +46,14 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
         initData();
     }
 
-//    //透明状态栏
-//    public  void makeStatusBarTransparent(Activity activity) {
-//        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-//            return;
-//        }
-//        Window window = activity.getWindow();
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-//            setDarkStatusIcon(true);
-//            window.setStatusBarColor(Color.TRANSPARENT);
-//        } else {
-//            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//        }
-//    }
-//
-//    protected void setDarkStatusIcon(boolean dark) {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//            View decorView = getWindow().getDecorView();
-//            if (decorView == null) return;
-//
-//            int vis = decorView.getSystemUiVisibility();
-//            if (dark) {
-//                vis |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-//            } else {
-//                vis &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-//            }
-//            decorView.setSystemUiVisibility(vis);
-//        }
-//    }
-
     @Override
     protected void onDestroy() {
         if (p != null)
             p.destroy();
         p = null;
+        if (!isFinishing()) {
+            finish();
+        }
         super.onDestroy();
     }
 

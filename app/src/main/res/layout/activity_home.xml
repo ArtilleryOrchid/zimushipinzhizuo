@@ -36,25 +36,23 @@
     <RelativeLayout
         android:id="@+id/shadow_back"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/dp_50"
+        android:layout_height="@dimen/dp_70"
         android:background="@drawable/home_background">
 
         <ImageView
             android:id="@+id/my"
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_20"
-            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dp_17"
-            android:src="@mipmap/my_icon"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="@dimen/dp_35"
+            android:src="@mipmap/my_icon" />
 
         <ImageView
             android:id="@+id/add_file"
             android:layout_width="@dimen/dp_22"
             android:layout_height="@dimen/dp_20"
-            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dp_17"
+            android:layout_marginTop="@dimen/dp_35"
             android:layout_toEndOf="@+id/my"
             android:src="@mipmap/add_file" />
 
@@ -63,7 +61,7 @@
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_20"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_35"
             android:layout_marginRight="@dimen/dp_17"
             android:src="@mipmap/storage_dis" />
     </RelativeLayout>

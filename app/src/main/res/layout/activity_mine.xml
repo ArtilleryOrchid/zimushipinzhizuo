@@ -9,6 +9,7 @@
 
 
     <ImageView
+        android:id="@+id/mine_back"
         android:layout_width="@dimen/dp_13"
         android:layout_height="@dimen/dp_22"
         android:layout_marginLeft="@dimen/dp_25"
