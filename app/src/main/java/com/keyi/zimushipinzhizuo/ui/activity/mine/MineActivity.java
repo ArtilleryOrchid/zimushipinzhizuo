@@ -1,13 +1,15 @@
-package com.keyi.zimushipinzhizuo.ui.activity.login;
+package com.keyi.zimushipinzhizuo.ui.activity.mine;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
 
-public class LoginActivity extends BaseActivity {
-
+public class MineActivity extends BaseActivity {
     @Override
     public int layoutID() {
-        return R.layout.activity_login;
+        return R.layout.activity_mine;
     }
 
     @Override

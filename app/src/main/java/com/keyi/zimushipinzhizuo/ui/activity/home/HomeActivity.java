@@ -1,15 +1,20 @@
 package com.keyi.zimushipinzhizuo.ui.activity.home;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
+import com.keyi.zimushipinzhizuo.ui.activity.mine.MineActivity;
 import com.wangjie.shadowviewhelper.ShadowProperty;
 import com.wangjie.shadowviewhelper.ShadowViewHelper;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements View.OnClickListener {
+    private ImageView my;
 
     @Override
     public int layoutID() {
@@ -23,6 +28,8 @@ public class HomeActivity extends BaseActivity {
                         .setShadowDx(0x77FF0000)
                         .setShadowDy(3)
                 , findViewById(R.id.shadow_back));
+        my = findViewById(R.id.my);
+        my.setOnClickListener(this);
     }
 
     @Override
@@ -43,5 +50,14 @@ public class HomeActivity extends BaseActivity {
     @Override
     public void hideDialog() {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.my:
+                startActivity(new Intent(this, MineActivity.class));
+                break;
+        }
     }
 }
