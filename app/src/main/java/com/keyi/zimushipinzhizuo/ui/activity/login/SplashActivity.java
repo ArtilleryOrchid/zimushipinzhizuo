@@ -21,7 +21,7 @@ public class SplashActivity extends BaseActivity {
             public void run() {
                 try {
                     sleep(2000);//使程序休眠一秒
-                    Intent it = new Intent(SplashActivity.this, HomeActivity.class);
+                    Intent it = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(it);
                     finish();//关闭当前活动
                 } catch (Exception e) {

@@ -17,7 +17,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void initView() {
-
+        p.loginRequest("ZIMUSHIPINZHIZUO_KEYI", "13041422680");
     }
 
     @Override

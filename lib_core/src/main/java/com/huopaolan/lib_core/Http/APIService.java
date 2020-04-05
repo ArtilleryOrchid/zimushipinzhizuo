@@ -23,8 +23,8 @@ public class APIService {
     //封装OkHttp
     private void buildOkHttp() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.connectTimeout(1, TimeUnit.MINUTES);
-        builder.readTimeout(1, TimeUnit.MINUTES);
+        builder.connectTimeout(20, TimeUnit.MINUTES);
+        builder.readTimeout(20, TimeUnit.MINUTES);
         HttpLoggingInterceptor interceptor =
                 new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -39,7 +39,7 @@ public class APIService {
             buildOkHttp();
             Retrofit.Builder builder = new Retrofit.Builder();
             builder.client(client); //添加OkHttpClient对象
-            builder.baseUrl("http://169.254.197.176/yoho/");//所有网络请求公共地址部分
+            builder.baseUrl("https://test99.rhinox.cn/");//所有网络请求公共地址部分
             //关联gson
             builder.addConverterFactory(GsonConverterFactory.create());
             //关联rxjava
@@ -53,6 +53,7 @@ public class APIService {
             buildRetrofit();
         return retrofit;
     }
+
     /**
      * 单例 懒汉式
      */

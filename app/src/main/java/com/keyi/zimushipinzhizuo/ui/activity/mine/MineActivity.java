@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
+import com.keyi.zimushipinzhizuo.ui.activity.home.HomeActivity;
 import com.keyi.zimushipinzhizuo.ui.activity.login.LoginActivity;
 
 public class MineActivity extends BaseActivity implements View.OnClickListener {
@@ -60,7 +61,7 @@ public class MineActivity extends BaseActivity implements View.OnClickListener {
                 finish();
                 break;
             case R.id.login:
-                startActivity(new Intent(this, LoginActivity.class));
+                startActivity(new Intent(this, HomeActivity.class));
                 break;
         }
     }
