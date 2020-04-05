@@ -13,4 +13,5 @@
     <string name="dialog_line_bg_color">#ff5A5A5A</string>
     <color name="colorDark">#F2F3F5</color>
     <color name="font_colorDark">#ff999999</color>
+    <color name="dialog_span_color">#ff3099FB</color>
 </resources>

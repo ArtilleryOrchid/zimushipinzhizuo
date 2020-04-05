@@ -35,11 +35,16 @@ public class CustomDialog extends Dialog {
         private String positiveButtonText;
         private String negativeButtonText;
         private View contentView;
+        private TextView messageView;
         private DialogInterface.OnClickListener postiviteButtonClickLisener;
         private DialogInterface.OnClickListener negativaButtonClickListener;
 
         public Builder(Context context) {
             this.context = context;
+        }
+
+        public TextView getMessageView() {
+            return messageView;
         }
 
         public Builder setMessage(String message) {
@@ -80,6 +85,7 @@ public class CustomDialog extends Dialog {
             dialog.addContentView(layout, new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             ((TextView) layout.findViewById(R.id.title)).setText(title);
+            messageView = ((TextView)(layout.findViewById(R.id.message)));
             if (positiveButtonText != null) {
                 ((Button)(layout.findViewById(R.id.positive_btn)))
                         .setText(positiveButtonText);
@@ -129,7 +135,6 @@ public class CustomDialog extends Dialog {
                         .setVisibility(View.GONE);
             }
             dialog.setContentView(layout);
-
             return dialog;
         }
 

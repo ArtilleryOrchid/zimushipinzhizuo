@@ -8,8 +8,7 @@
     android:orientation="vertical">
     <TextView
         android:layout_marginTop="28dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:maxWidth="@dimen/dp_212"
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
