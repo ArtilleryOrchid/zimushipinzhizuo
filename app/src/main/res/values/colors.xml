@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#FAFAFA</color>
     <color name="colorAccent">#FF4081</color>
+
     <color name="dialog_bg_color">#ffffffff</color>
     <color name="dialog_title_text_color">#ff545454</color>
     <color name="dialog_content_text_color">#ff979797</color>
@@ -10,5 +11,6 @@
     <color name="dialog_agree_1">#ffBF8016</color>
     <color name="dialog_tv_disagree">#ff999999</color>
     <string name="dialog_line_bg_color">#ff5A5A5A</string>
-
+    <color name="colorDark">#F2F3F5</color>
+    <color name="font_colorDark">#ff999999</color>
 </resources>
