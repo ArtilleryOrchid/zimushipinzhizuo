@@ -8,7 +8,9 @@ import io.reactivex.Observable;
 
 public interface LoginContract {
     interface LoginIView extends IView {
-        void loginSuccess(String entity);
+        void loginSuccess(LoginEntity entity);
+
+        void loginError(String error);
     }
 
     interface LoginIModel extends IModel {

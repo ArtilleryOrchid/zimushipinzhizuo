@@ -1,4 +1,6 @@
 package com.keyi.zimushipinzhizuo.bean;
 
-public class LoginEntity {
+import com.huopaolan.lib_core.Base.BaseEntity;
+
+public class LoginEntity extends BaseEntity {
 }

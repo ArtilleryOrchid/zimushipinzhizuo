@@ -2,6 +2,7 @@ package com.keyi.zimushipinzhizuo.ui.activity.login;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
+import com.keyi.zimushipinzhizuo.bean.LoginEntity;
 import com.keyi.zimushipinzhizuo.compont.DaggerLoginComponent;
 import com.keyi.zimushipinzhizuo.contract.LoginContract;
 import com.keyi.zimushipinzhizuo.modules.LoginModules;
@@ -40,7 +41,12 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     @Override
-    public void loginSuccess(String entity) {
+    public void loginSuccess(LoginEntity entity) {
+
+    }
+
+    @Override
+    public void loginError(String error) {
 
     }
 }
