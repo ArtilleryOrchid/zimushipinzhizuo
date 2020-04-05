@@ -1,23 +1,15 @@
 package com.keyi.zimushipinzhizuo.ui.activity.home;
 
-<<<<<<< HEAD
-
 import android.content.DialogInterface;
 import android.widget.Toast;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
-import com.keyi.zimushipinzhizuo.ui.activity.login.SplashActivity;
 import com.keyi.zimushipinzhizuo.ui.widget.dialog.CustomDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
-import com.huopaolan.lib_core.Base.BaseActivity;
-import com.keyi.zimushipinzhizuo.R;
 import com.keyi.zimushipinzhizuo.ui.activity.mine.MineActivity;
 import com.wangjie.shadowviewhelper.ShadowProperty;
 import com.wangjie.shadowviewhelper.ShadowViewHelper;
