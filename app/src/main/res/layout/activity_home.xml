@@ -1,12 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDark"
     tools:context=".ui.activity.home.HomeActivity">
-    <ImageView
-        android:layout_width="match_parent"
+
+
+    <RelativeLayout
+        android:id="@+id/add_file_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/icon_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/import_file" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/icon_file"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_15"
+            android:text="点击任意位置即可导入视频"
+            android:textColor="@color/font_colorDark"
+            android:textSize="@dimen/sp_16" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/shadow_back"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_50"
-        android:background="@drawable/home_background"/>
-</android.support.constraint.ConstraintLayout>
+        android:background="@drawable/home_background">
+
+        <ImageView
+            android:id="@+id/my"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_20"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_17"
+            android:src="@mipmap/my_icon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/add_file"
+            android:layout_width="@dimen/dp_22"
+            android:layout_height="@dimen/dp_20"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_17"
+            android:layout_toEndOf="@+id/my"
+            android:src="@mipmap/add_file" />
+
+        <ImageView
+            android:id="@+id/up_data"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_20"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_17"
+            android:src="@mipmap/storage_dis" />
+    </RelativeLayout>
+</RelativeLayout>

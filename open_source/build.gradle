@@ -47,4 +47,5 @@ dependencies {
     //UI
     api 'com.youth.banner:banner:1.4.10'
     api 'de.hdodenhof:circleimageview:3.0.0'
+    api 'com.github.wangjiegulu:ShadowViewHelper:1.0.1'
 }
