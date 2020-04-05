@@ -6,7 +6,7 @@
 
     <color name="dialog_bg_color">#ffffffff</color>
     <color name="dialog_title_text_color">#ff545454</color>
-    <color name="dialog_content_text_color">#ff979797</color>
+    <color name="dialog_content_text_color">#ff000000</color>
     <color name="dialog_agree">#fff6B016</color>
     <color name="dialog_agree_1">#ffBF8016</color>
     <color name="dialog_tv_disagree">#ff999999</color>

@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/content"
+    android:minWidth="@dimen/dp_276"
     android:background="@drawable/dialog_bg_shape"
     android:orientation="vertical">
     <TextView
@@ -14,7 +15,7 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/dialog_title_text_size"
         android:textColor="@color/dialog_title_text_color"
-        android:gravity="center"/>
+        android:gravity="center_horizontal"/>
     <TextView
         android:id="@+id/message"
         android:textSize="@dimen/dialog_content_text_size"
@@ -22,6 +23,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:lineSpacingMultiplier="1.236"
+        android:textColor="@color/dialog_content_text_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
