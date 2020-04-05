@@ -96,18 +96,18 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
     private void setSpan(TextView messageView) {
 
-        SpannableStringBuilder style = new SpannableStringBuilder(
-                getBaseContext().getString(R.string.dialog_content));
         SpannableString str = new SpannableString(getBaseContext().getString(R.string.dialog_content));
-        int[] spanIndexs = getSpanIndexs(style.toString());
+        int[] spanIndexs = getSpanIndexs(str.toString());
         int index = 0;
         for (int i = 0; i < spanIndexs.length / 2; i ++) {
-            str.setSpan(new MyClickText(HomeActivity.this), spanIndexs[index + i], spanIndexs[index + i + 1] + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            messageView.setText(str);
+            str.setSpan(new MyClickText(HomeActivity.this, str.toString()
+                            .substring(spanIndexs[index + i], spanIndexs[index + i + 1] + 1))
+                    , spanIndexs[index + i], spanIndexs[index + i + 1] + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             messageView.setMovementMethod(LinkMovementMethod.getInstance());
             messageView.setHighlightColor(Color.TRANSPARENT);
             index += index + i + 1;
         }
+        messageView.setText(str);
     }
 
     private int[] getSpanIndexs(String string) {
