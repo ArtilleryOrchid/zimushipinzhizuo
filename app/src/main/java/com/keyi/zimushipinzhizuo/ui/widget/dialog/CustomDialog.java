@@ -3,20 +3,15 @@ package com.keyi.zimushipinzhizuo.ui.widget.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.keyi.zimushipinzhizuo.R;
 
-import org.w3c.dom.Text;
 
 public class CustomDialog extends Dialog {
 
@@ -36,6 +31,9 @@ public class CustomDialog extends Dialog {
         private String negativeButtonText;
         private View contentView;
         private TextView messageView;
+        private Button positiveView;
+        private TextView negativeView;
+        private TextView titleView;
         private DialogInterface.OnClickListener postiviteButtonClickLisener;
         private DialogInterface.OnClickListener negativaButtonClickListener;
 
@@ -45,6 +43,18 @@ public class CustomDialog extends Dialog {
 
         public TextView getMessageView() {
             return messageView;
+        }
+
+        public Button getPositiveView() {
+            return positiveView;
+        }
+
+        public TextView getNegativeView() {
+            return negativeView;
+        }
+
+        public TextView getTitleView() {
+            return titleView;
         }
 
         public Builder setMessage(String message) {
@@ -84,8 +94,11 @@ public class CustomDialog extends Dialog {
             View layout = inflater.inflate(R.layout.dialog_normal_layout, null);
             dialog.addContentView(layout, new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            messageView = (TextView)(layout.findViewById(R.id.message));
+            positiveView = (Button)(layout.findViewById(R.id.positive_btn));
+            negativeView = (TextView) (layout.findViewById(R.id.negative_btn));
+            titleView = (TextView) layout.findViewById(R.id.title);
             ((TextView) layout.findViewById(R.id.title)).setText(title);
-            messageView = ((TextView)(layout.findViewById(R.id.message)));
             if (positiveButtonText != null) {
                 ((Button)(layout.findViewById(R.id.positive_btn)))
                         .setText(positiveButtonText);
