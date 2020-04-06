@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 /**
  * 测试公共地址
  */
-public interface Contans {
+public interface api {
     public static String API = "https://test99.rhinox.cn/";
 
     /**

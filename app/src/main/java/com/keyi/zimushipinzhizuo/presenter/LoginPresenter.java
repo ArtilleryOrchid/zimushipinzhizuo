@@ -47,7 +47,6 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginIView, Logi
                         if (loginEntity == null) {
                             return;
                         } else {
-                            Log.d("Data", "" + loginEntity);
                             v.loginSuccess(loginEntity);
                         }
                     }
