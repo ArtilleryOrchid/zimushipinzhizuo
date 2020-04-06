@@ -428,5 +428,7 @@
     <dimen name="dialog_content_text_size">14sp</dimen>
     <dimen name="dialog_radius_size">6dp</dimen>
     <dimen name="dialog_agree_tv_size">16sp</dimen>
+    <dimen name="dialog_exit_title_text_size">18sp</dimen>
+    <dimen name="dialog_exit_message_text_size">16sp</dimen>
 
 </resources>

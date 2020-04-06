@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/content"
+    android:minWidth="@dimen/dp_276"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_bg_shape">
+    <TextView
+        android:layout_marginTop="28dp"
+        android:maxWidth="@dimen/dp_212"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dialog_exit_title_text_size"
+        android:textColor="@color/dialog_exit_title_color"
+        android:gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/message"
+        android:textSize="@dimen/dialog_exit_message_text_size"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="32dp"
+        android:gravity="center_horizontal"
+        android:layout_marginRight="32dp"
+        android:lineSpacingMultiplier="1.236"
+        android:textColor="@color/dialog_exit_message_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/positive_btn"
+        android:layout_marginTop="29dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/dialog_btn_agree_bg"
+        android:layout_marginLeft="34dp"
+        android:layout_marginRight="34dp"
+        android:textColor="@color/dialog_bg_color"/>
+    <TextView
+        android:layout_marginBottom="28dp"
+        android:id="@+id/negative_btn"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dialog_tv_disagree"
+        android:textSize="@dimen/dialog_content_text_size" />
+
+</LinearLayout>
