@@ -11,6 +11,7 @@ import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
 import com.keyi.zimushipinzhizuo.ui.activity.home.HomeActivity;
 import com.keyi.zimushipinzhizuo.ui.activity.login.LoginActivity;
+import com.keyi.zimushipinzhizuo.utils.SPUtils;
 
 public class MineActivity extends BaseActivity implements View.OnClickListener {
     private ImageView mine_back;
@@ -61,7 +62,8 @@ public class MineActivity extends BaseActivity implements View.OnClickListener {
                 finish();
                 break;
             case R.id.login:
-                startActivity(new Intent(this, HomeActivity.class));
+                SPUtils.getInstance().getBoolean("first", true);
+                startActivity(new Intent(this, LoginActivity.class));
                 break;
         }
     }

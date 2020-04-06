@@ -25,6 +25,7 @@ import com.keyi.zimushipinzhizuo.ui.activity.home.HomeActivity;
 import com.keyi.zimushipinzhizuo.ui.widget.dialog.CustomDialog;
 import com.keyi.zimushipinzhizuo.ui.widget.span.CountdownButton;
 import com.keyi.zimushipinzhizuo.ui.widget.span.MyClickText;
+import com.keyi.zimushipinzhizuo.utils.SPUtils;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.LoginIView, View.OnClickListener {
     private Button login_button;
@@ -40,8 +41,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void initView() {
-        final CustomDialog.Builder builder = new CustomDialog.Builder(this);
-        showAgreeDialog(builder);
+        boolean first = SPUtils.getInstance().getBoolean("first", false);
+        if (!first) {
+            final CustomDialog.Builder builder = new CustomDialog.Builder(this);
+            showAgreeDialog(builder);
+        }
         login_button = findViewById(R.id.login_button);
         login_button.setOnClickListener(this::onClick);
         phone = findViewById(R.id.phone);
@@ -60,6 +64,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+                        SPUtils.getInstance().putBoolean("first", true);
                     }
                 });
         builder.setNegativeButton(getBaseContext().getString(R.string.dialog_disagree_tv_text)
@@ -67,6 +72,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+                        SPUtils.getInstance().putBoolean("first", false);
                         showIsExitAppDialog(builder);
                     }
                 });
