@@ -36,6 +36,15 @@ public class CustomDialog extends Dialog {
         private TextView titleView;
         private DialogInterface.OnClickListener postiviteButtonClickLisener;
         private DialogInterface.OnClickListener negativaButtonClickListener;
+        private int mLayoutId;
+
+        public int getmLayoutId() {
+            return mLayoutId;
+        }
+
+        public void setmLayoutId(int mLayoutId) {
+            this.mLayoutId = mLayoutId;
+        }
 
         public Builder(Context context) {
             this.context = context;
@@ -91,7 +100,7 @@ public class CustomDialog extends Dialog {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             final CustomDialog dialog = new CustomDialog(context, R.style.myDialog);
             dialog.setCancelable(false);
-            View layout = inflater.inflate(R.layout.dialog_normal_layout, null);
+            View layout = inflater.inflate(mLayoutId != 0 ? mLayoutId : R.layout.dialog_normal_layout, null);
             dialog.addContentView(layout, new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             messageView = (TextView)(layout.findViewById(R.id.message));

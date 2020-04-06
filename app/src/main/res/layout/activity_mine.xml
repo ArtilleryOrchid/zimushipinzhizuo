@@ -91,13 +91,13 @@
             </LinearLayout>
         </LinearLayout>
 
-        <TextView
+        <Button
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_40"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dp_182"
-            android:background="@drawable/login_button"
+            android:background="@drawable/dialog_btn_agree_bg"
             android:gravity="center_vertical|center_horizontal"
             android:text="点击登录"
             android:textColor="#ffffffff"
