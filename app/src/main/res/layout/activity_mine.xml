@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/mine_background"
+    android:background="@drawable/mine_background"
     tools:context=".ui.activity.mine.MineActivity">
 
 
@@ -14,7 +14,7 @@
         android:layout_height="@dimen/dp_22"
         android:layout_marginLeft="@dimen/dp_25"
         android:layout_marginTop="@dimen/dp_47"
-        android:src="@mipmap/back" />
+        android:src="@drawable/back" />
 
     <ImageView
         android:id="@+id/header_image"
@@ -33,22 +33,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp_16"
-            android:layout_marginTop="@dimen/dp_35"
             android:orientation="vertical">
 
             <LinearLayout
+                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/radius_general_click_bg"
                 android:orientation="vertical">
-
                 <TextView
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_35"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="帮助与反馈"
                     android:textColor="#ff666666"
                     android:textSize="@dimen/sp_16" />
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_1"
@@ -57,12 +57,15 @@
             </LinearLayout>
 
             <LinearLayout
+                android:clickable="true"
+                android:background="@drawable/general_click_bg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_13"
                 android:orientation="vertical">
 
                 <TextView
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="关于我们"
@@ -77,12 +80,16 @@
             </LinearLayout>
 
             <LinearLayout
+                android:background="@drawable/general_click_bg"
+                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_13"
                 android:orientation="vertical">
 
                 <TextView
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_13"
+                    android:layout_marginBottom="@dimen/dp_13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="清理缓存"

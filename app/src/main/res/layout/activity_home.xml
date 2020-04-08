@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:src="@mipmap/import_file" />
+            android:src="@drawable/import_file" />
 
         <TextView
             android:layout_width="wrap_content"

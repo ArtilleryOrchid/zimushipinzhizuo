@@ -9,24 +9,24 @@
         android:layout_width="@dimen/dp_25"
         android:layout_height="@dimen/dp_20"
         android:layout_marginStart="@dimen/dp_17"
-        android:layout_marginTop="@dimen/dp_35"
-        android:src="@mipmap/my_icon" />
+        android:layout_marginTop="@dimen/dp_40"
+        android:src="@drawable/my_icon" />
 
     <ImageView
         android:id="@+id/add_file"
         android:layout_width="@dimen/dp_22"
         android:layout_height="@dimen/dp_20"
         android:layout_marginStart="@dimen/dp_17"
-        android:layout_marginTop="@dimen/dp_35"
+        android:layout_marginTop="@dimen/dp_40"
         android:layout_toEndOf="@+id/my"
-        android:src="@mipmap/add_file" />
+        android:src="@drawable/add_file" />
 
     <ImageView
         android:id="@+id/up_data"
         android:layout_width="@dimen/dp_25"
         android:layout_height="@dimen/dp_20"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="@dimen/dp_35"
+        android:layout_marginTop="@dimen/dp_40"
         android:layout_marginRight="@dimen/dp_17"
-        android:src="@mipmap/storage_dis" />
+        android:src="@drawable/storage_dis" />
 </RelativeLayout>

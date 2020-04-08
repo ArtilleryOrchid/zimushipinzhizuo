@@ -16,5 +16,7 @@
     <color name="dialog_span_color">#ff3099FB</color>
     <color name="dialog_exit_title_color">#ff545454</color>
     <color name="dialog_exit_message_color">#ff757575</color>
+    <color name="general_click_bg_color">#ffDFDFDF</color>
+    <color name="mine_color_bg_color">#00ffffff</color>
 
 </resources>
