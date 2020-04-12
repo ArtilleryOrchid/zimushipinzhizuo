@@ -24,160 +24,143 @@
         android:layout_marginTop="@dimen/dp_47"
         android:background="@drawable/header_back" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/dp_206"
-        android:background="@drawable/mine_botton_back">
+        android:background="@drawable/mine_botton_back"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_35"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:background="@drawable/general_click_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:src="@drawable/import_icon" />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="帮助与反馈"
+                    android:layout_centerVertical="true"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/sp_16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_below="@id/text1"
+                    android:layout_marginTop="@dimen/dp_11"
+                    android:background="#F4F1F2" />
+            </RelativeLayout>
+            <!--关于我们-->
+            <RelativeLayout
+                android:id="@+id/about_us"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_13"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:background="@drawable/general_click_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:src="@drawable/import_icon" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="关于我们"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/sp_16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_below="@id/text3"
+                    android:layout_marginTop="@dimen/dp_11"
+                    android:background="#F4F1F2" />
+            </RelativeLayout>
+            <!--清理缓存-->
+            <RelativeLayout
+                android:id="@+id/memory_close"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_13"
+                android:layout_marginBottom="@dimen/dp_13"
+                android:background="@drawable/general_click_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:src="@drawable/import_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="清理缓存"
+                    android:layout_centerVertical="true"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:id="@+id/close_mb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_42"
+                    android:text="0B"
+                    android:textColor="#ff333333"
+                    android:textSize="@dimen/sp_16" />
+
+                <View
+                    android:id="@+id/line_close"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:layout_below="@+id/close_mb"
+                    android:layout_marginTop="@dimen/dp_11"
+                    android:background="#F4F1F2" />
+            </RelativeLayout>
+        </LinearLayout>
 
         <Button
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_40"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dp_182"
+            android:layout_marginTop="@dimen/dp_16"
             android:background="@drawable/dialog_btn_agree_bg"
             android:gravity="center_vertical|center_horizontal"
             android:text="点击登录"
             android:textColor="#ffffffff"
             android:textSize="@dimen/sp_14" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!--帮助与反馈-->
-            <LinearLayout
-                android:id="@+id/help"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp_16"
-                    android:layout_marginTop="@dimen/dp_35"
-                    android:layout_marginBottom="@dimen/dp_5"
-                    android:background="@drawable/radius_general_click_bg">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/dp_18"
-                        android:src="@drawable/import_icon" />
-
-                    <TextView
-                        android:id="@+id/text1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="帮助与反馈"
-                        android:textColor="#ff666666"
-                        android:textSize="@dimen/sp_16" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_1"
-                        android:layout_below="@id/text1"
-                        android:layout_marginTop="@dimen/dp_11"
-                        android:background="#F4F1F2" />
-                </RelativeLayout>
-            </LinearLayout>
-            <!--关于我们-->
-            <LinearLayout
-                android:id="@+id/about_us"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp_16"
-                    android:layout_marginTop="@dimen/dp_13"
-                    android:layout_marginBottom="@dimen/dp_5"
-                    android:background="@drawable/general_click_bg">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/dp_18"
-                        android:src="@drawable/import_icon" />
-
-                    <TextView
-                        android:id="@+id/text3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="关于我们"
-                        android:textColor="#ff666666"
-                        android:textSize="@dimen/sp_16" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_1"
-                        android:layout_below="@id/text3"
-                        android:layout_marginTop="@dimen/dp_11"
-                        android:background="#F4F1F2" />
-                </RelativeLayout>
-            </LinearLayout>
-            <!--清理缓存-->
-            <LinearLayout
-                android:id="@+id/memory_close"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp_16"
-                    android:layout_marginTop="@dimen/dp_13"
-                    android:layout_marginBottom="@dimen/dp_13"
-                    android:background="@drawable/general_click_bg">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/dp_18"
-                        android:src="@drawable/import_icon" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="清理缓存"
-                        android:textColor="#ff666666"
-                        android:textSize="@dimen/sp_16" />
-
-                    <TextView
-                        android:id="@+id/close_mb"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="@dimen/dp_42"
-                        android:text="0B"
-                        android:textColor="#ff333333"
-                        android:textSize="@dimen/sp_16" />
-
-                    <View
-                        android:id="@+id/line_close"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_1"
-                        android:layout_below="@+id/close_mb"
-                        android:layout_marginTop="@dimen/dp_11"
-                        android:background="#F4F1F2" />
-                </RelativeLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </RelativeLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/login_morn"

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
@@ -17,9 +18,9 @@ import com.keyi.zimushipinzhizuo.utils.SPUtils;
 public class MineActivity extends BaseActivity implements View.OnClickListener {
     private ImageView mine_back;
     private TextView login, login_vip;
-    private LinearLayout help;
-    private LinearLayout about_us;
-    private LinearLayout memory_close;
+    private RelativeLayout help;
+    private RelativeLayout about_us;
+    private RelativeLayout memory_close;
 
     @Override
     public int layoutID() {
