@@ -8,4 +8,5 @@
     <string name="dialog_exit_nessage">确认退出当前app</string>
     <string name="dialog_exit_positive">取消</string>
     <string name="dialog_exit_negative">确认退出</string>
+    <string name="str"><![CDATA[&]]></string>
 </resources>

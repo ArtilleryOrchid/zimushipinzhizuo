@@ -9,7 +9,10 @@
         android:roundIcon="@drawable/phone_log"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.home.AddProjectActivity"></activity>
+        <activity android:name=".ui.activity.mine.HtmlActivity"></activity>
+        <activity android:name=".ui.activity.mine.HelpActivity" />
+        <activity android:name=".ui.activity.mine.About_US_Activity" />
+        <activity android:name=".ui.activity.home.AddProjectActivity" />
         <activity android:name=".ui.activity.mine.HelpAndFeedBackActivity" />
         <activity android:name=".ui.activity.mine.MineActivity" />
         <activity android:name=".ui.activity.logout.LogoutActivity" />

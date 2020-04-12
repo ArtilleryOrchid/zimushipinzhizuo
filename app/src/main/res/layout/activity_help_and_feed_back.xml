@@ -10,115 +10,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_35"
+        android:layout_marginTop="@dimen/dp_122"
         android:background="@color/colorPrimaryDark"
         android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_13"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/dp_20">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="界面问题"
-                android:textColor="#ff666666"
-                android:textSize="@dimen/sp_16" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_2"
-                android:layout_marginTop="@dimen/dp_11"
-                android:background="#F4F1F2" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_13"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/dp_20">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="功能问题"
-                android:textColor="#ff666666"
-                android:textSize="@dimen/sp_16" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_2"
-                android:layout_marginTop="@dimen/dp_11"
-                android:background="#F4F1F2" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_13"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/dp_20">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="内容问题"
-                android:textColor="#ff666666"
-                android:textSize="@dimen/sp_16" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_2"
-                android:layout_marginTop="@dimen/dp_11"
-                android:background="#F4F1F2" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_13"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/dp_20">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="其他问题"
-                android:textColor="#ff666666"
-                android:textSize="@dimen/sp_16" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_2"
-                android:layout_marginTop="@dimen/dp_11"
-                android:background="#F4F1F2" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_13"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/dp_20">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="产品建议"
-                android:textColor="#ff666666"
-                android:textSize="@dimen/sp_16" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_2"
-                android:layout_marginTop="@dimen/dp_11"
-                android:background="#F4F1F2" />
-        </LinearLayout>
-
+        <!--界面问题-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,22 +22,184 @@
             android:paddingLeft="@dimen/dp_20">
 
             <RelativeLayout
+                android:id="@+id/interface_problem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="@dimen/dp_30"
+                android:background="@drawable/radius_general_click_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:src="@drawable/import_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="界面问题"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/sp_16" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!--功能问题-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_20">
+
+            <RelativeLayout
+                android:id="@+id/function_problem"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:background="@drawable/radius_general_click_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:src="@drawable/import_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="功能问题"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/sp_16" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!--内容问题-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_20">
+
+            <RelativeLayout
+                android:id="@+id/message_problem"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:background="@drawable/radius_general_click_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:src="@drawable/import_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="内容问题"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/sp_16" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!--其他问题-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_20">
+
+            <RelativeLayout
+                android:id="@+id/rests_problem"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:background="@drawable/radius_general_click_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:src="@drawable/import_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="其他问题"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/sp_16" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!--产品建议-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_20">
+
+            <RelativeLayout
+                android:id="@+id/product_problem"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:background="@drawable/radius_general_click_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:src="@drawable/import_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="产品建议"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/sp_16" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!--联系QQ-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_20">
+
+            <RelativeLayout
+                android:id="@+id/qq"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/radius_general_click_bg">
+
+                <ImageView
+                    android:id="@+id/import_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:src="@drawable/import_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:layout_toStartOf="@+id/import_icon"
+                    android:text="1404556846"
+                    android:textColor="#ff999999"
+                    android:textSize="@dimen/sp_16" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="联系QQ"
                     android:textColor="#ff666666"
-                    android:textSize="@dimen/sp_16" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:text="1404556846"
-                    android:textColor="#ff999999"
                     android:textSize="@dimen/sp_16" />
             </RelativeLayout>
 
@@ -152,7 +209,7 @@
                 android:layout_marginTop="@dimen/dp_11"
                 android:background="#F4F1F2" />
         </LinearLayout>
-
+        <!--账号注销-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,18 +217,40 @@
             android:orientation="vertical"
             android:paddingLeft="@dimen/dp_20">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="账号注销"
-                android:textColor="#ff666666"
-                android:textSize="@dimen/sp_16" />
-
-            <View
+            <RelativeLayout
+                android:id="@+id/access_logout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_2"
-                android:layout_marginTop="@dimen/dp_11"
-                android:background="#F4F1F2" />
+                android:layout_height="@dimen/dp_30"
+                android:background="@drawable/radius_general_click_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:src="@drawable/import_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账号注销"
+                    android:textColor="#ff666666"
+                    android:textSize="@dimen/sp_16" />
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_90"
+        android:text="请选择以下其中一项："
+        android:textColor="#ff333333"
+        android:textSize="@dimen/sp_16" />
+
+    <include
+        android:id="@+id/help_bar"
+        layout="@layout/help_bar" />
 </RelativeLayout>

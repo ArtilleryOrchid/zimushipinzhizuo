@@ -50,4 +50,10 @@ public class SplashActivity extends BaseActivity {
     public void hideDialog() {
 
     }
+
+    @Override
+    protected void onDestroy() {
+        myThread.interrupt();
+        super.onDestroy();
+    }
 }
