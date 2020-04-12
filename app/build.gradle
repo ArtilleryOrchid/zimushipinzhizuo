@@ -13,6 +13,15 @@ android {
         versionCode VERSION_CODE as int
         versionName VERSION_NAME
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+        signingConfig signingConfigs.debug
     }
     buildTypes {
         release {
@@ -20,6 +29,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/cpp/ffmpeg/prebuilt/']
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
@@ -40,4 +62,5 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
     implementation project(':lib_core')
     implementation project(':open_source')
+    implementation 'com.google.code.gson:gson:2.8.6'
 }
