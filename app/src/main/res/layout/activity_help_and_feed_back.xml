@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp_20"
-                android:text="界面问题"
+                android:text="@string/interface_problem"
                 android:textColor="#ff666666"
                 android:textSize="@dimen/sp_16" />
         </RelativeLayout>
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp_20"
-                android:text="功能问题"
+                android:text="@string/function_problem"
                 android:textColor="#ff666666"
                 android:textSize="@dimen/sp_16" />
         </RelativeLayout>
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp_20"
-                android:text="内容问题"
+                android:text="@string/message_problem"
                 android:textColor="#ff666666"
                 android:textSize="@dimen/sp_16" />
         </RelativeLayout>
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp_20"
-                android:text="其他问题"
+                android:text="@string/rests_problem"
                 android:textColor="#ff666666"
                 android:textSize="@dimen/sp_16" />
         </RelativeLayout>
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp_20"
-                android:text="产品建议"
+                android:text="@string/product_problem"
                 android:textColor="#ff666666"
                 android:textSize="@dimen/sp_16" />
         </RelativeLayout>
@@ -161,7 +161,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/dp_18"
                 android:layout_toStartOf="@+id/import_icon"
-                android:text="1404556846"
+                android:text="@string/qq"
                 android:textColor="#ff999999"
                 android:textSize="@dimen/sp_16" />
 
@@ -170,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp_20"
-                android:text="联系QQ"
+                android:text="@string/qq_call"
                 android:textColor="#ff666666"
                 android:textSize="@dimen/sp_16" />
         </RelativeLayout>
@@ -196,7 +196,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp_20"
-                android:text="账号注销"
+                android:text="@string/access_logout"
                 android:textColor="#ff666666"
                 android:textSize="@dimen/sp_16" />
 
@@ -214,7 +214,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_90"
-        android:text="请选择以下其中一项："
+        android:text="@string/select"
         android:textColor="#ff333333"
         android:textSize="@dimen/sp_16" />
 

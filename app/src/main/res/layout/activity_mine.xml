@@ -57,7 +57,7 @@
                     android:id="@+id/text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="帮助与反馈"
+                    android:text="@string/help"
                     android:layout_centerVertical="true"
                     android:textColor="#ff666666"
                     android:textSize="@dimen/sp_16" />
@@ -92,7 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="关于我们"
+                    android:text="@string/about_us"
                     android:textColor="#ff666666"
                     android:textSize="@dimen/sp_16" />
 
@@ -124,7 +124,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="清理缓存"
+                    android:text="@string/memory_close"
                     android:layout_centerVertical="true"
                     android:textColor="#ff666666"
                     android:textSize="@dimen/sp_16" />
@@ -157,7 +157,7 @@
             android:layout_marginTop="@dimen/dp_16"
             android:background="@drawable/dialog_btn_agree_bg"
             android:gravity="center_vertical|center_horizontal"
-            android:text="点击登录"
+            android:text="@string/login"
             android:textColor="#ffffffff"
             android:textSize="@dimen/sp_14" />
     </LinearLayout>
@@ -169,7 +169,7 @@
         android:layout_below="@id/header_image"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dp_20"
-        android:text="登录开通更多权限"
+        android:text="@string/login_morn"
         android:textColor="#ffffffff"
         android:textSize="@dimen/sp_18" />
 
@@ -182,7 +182,7 @@
         android:layout_marginTop="@dimen/dp_20"
         android:background="@drawable/login_vip"
         android:gravity="center_horizontal|center_vertical"
-        android:text="登陆开通权限"
+        android:text="@string/login_vip"
         android:textColor="#fff6b016"
         android:textSize="@dimen/sp_14" />
 </RelativeLayout>

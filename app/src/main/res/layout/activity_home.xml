@@ -27,7 +27,7 @@
             android:layout_below="@+id/icon_file"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dp_18"
-            android:text="点击任意位置即可导入视频"
+            android:text="@string/improt_product"
             android:textColor="@color/font_colorDark"
             android:textSize="@dimen/sp_16" />
     </RelativeLayout>

@@ -22,6 +22,7 @@ import com.keyi.zimushipinzhizuo.contract.LoginContract;
 import com.keyi.zimushipinzhizuo.modules.LoginModules;
 import com.keyi.zimushipinzhizuo.presenter.LoginPresenter;
 import com.keyi.zimushipinzhizuo.ui.activity.home.HomeActivity;
+import com.keyi.zimushipinzhizuo.ui.activity.mine.HtmlActivity;
 import com.keyi.zimushipinzhizuo.ui.widget.dialog.CustomDialog;
 import com.keyi.zimushipinzhizuo.ui.widget.span.CountdownButton;
 import com.keyi.zimushipinzhizuo.ui.widget.span.MyClickText;
@@ -31,8 +32,10 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     private Button login_button;
     private EditText phone;
     private EditText access;
+    private TextView user_agreement, privacy_policy;
     private CountdownButton get_access;
     private ImageView login_back;
+    private Intent intent;
 
     @Override
     public int layoutID() {
@@ -54,6 +57,10 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         get_access.setOnClickListener(this::onClick);
         login_back = findViewById(R.id.login_back);
         login_back.setOnClickListener(this::onClick);
+        user_agreement = findViewById(R.id.user_agreement);
+        user_agreement.setOnClickListener(this::onClick);
+        privacy_policy = findViewById(R.id.privacy_policy);
+        privacy_policy.setOnClickListener(this::onClick);
     }
 
     private void showAgreeDialog(final CustomDialog.Builder builder) {
@@ -200,6 +207,17 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             case R.id.login_back:
                 startActivity(new Intent(this, HomeActivity.class));
                 finish();
+                break;
+            case R.id.user_agreement:
+            case R.id.privacy_policy:
+                if (v.getId() == R.id.user_agreement) {
+                    intent = new Intent(this, HtmlActivity.class);
+                    intent.putExtra("html", "user_agreement");
+                } else if (v.getId() == R.id.privacy_policy) {
+                    intent = new Intent(this, HtmlActivity.class);
+                    intent.putExtra("html", "privacy_policy");
+                }
+                startActivity(intent);
                 break;
         }
     }

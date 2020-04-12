@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dp_147"
-            android:text="新建项目"
+            android:text="@string/product"
             android:textColor="#ffffffff"
             android:textSize="@dimen/sp_18" />
     </RelativeLayout>
