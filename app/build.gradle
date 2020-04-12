@@ -5,6 +5,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion COMPILE_SDK_VERSION as int
     buildToolsVersion BUILD_TOOLS_VERSION
+    ndkVersion NDKVERSION
 
     defaultConfig {
         applicationId "com.keyi.zimushipinzhizuo"

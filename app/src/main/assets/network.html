@@ -104,13 +104,13 @@
 	    <p style="text-align:left;padding-left:10px;margin-bottom:50px;">联系方式2: 15858266035</p>
 	</div>
 </body>
-<script type="text/javascript">
+<script>
     setCompanyName();
     setCompanyAds();
     setAppName();
-<!--    window.onload = function (){-->
-<!--        window.setAppName = setAppName;-->
-<!--    }-->
+    window.onload = function (){
+        window.setAppName = setAppName;
+    }
     function setAppName(){ // 设置APP名字
         var name = "字幕视频制作";
         document.body.innerHTML = document.body.innerHTML.replace(/{{appName}}/g, name);
