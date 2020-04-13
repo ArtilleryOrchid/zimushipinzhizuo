@@ -18,9 +18,9 @@ import com.keyi.zimushipinzhizuo.utils.SPUtils;
 public class MineActivity extends BaseActivity implements View.OnClickListener {
     private ImageView mine_back;
     private TextView login, login_vip;
-    private RelativeLayout help;
-    private RelativeLayout about_us;
-    private RelativeLayout memory_close;
+    private LinearLayout help;
+    private LinearLayout about_us;
+    private LinearLayout memory_close;
 
     @Override
     public int layoutID() {

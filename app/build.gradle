@@ -5,7 +5,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion COMPILE_SDK_VERSION as int
     buildToolsVersion BUILD_TOOLS_VERSION
-    ndkVersion NDKVERSION
 
     defaultConfig {
         applicationId "com.keyi.zimushipinzhizuo"
@@ -63,5 +62,4 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
     implementation project(':lib_core')
     implementation project(':open_source')
-    implementation 'com.google.code.gson:gson:2.8.6'
 }
