@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.huopaolan.lib_core.Base.BaseEntity;
 import com.huopaolan.lib_core.Mvp.Presenter.BasePresenter;
 import com.keyi.zimushipinzhizuo.bean.AppEntity;
-import com.keyi.zimushipinzhizuo.contract.LoginContract;
+import com.keyi.zimushipinzhizuo.contract.AppMessageContract;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,19 +18,25 @@ import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 
-public class LoginPresenter extends BasePresenter<LoginContract.LoginIView, LoginContract.LoginIModel> {
+public class AppMessagePresenter extends BasePresenter<AppMessageContract.AppMessageIView, AppMessageContract.AppMessageIModel> {
+
     @Inject
-    public LoginPresenter(LoginContract.LoginIView loginIView, LoginContract.LoginIModel loginIModel) {
-        super(loginIView, loginIModel);
+    public AppMessagePresenter(AppMessageContract.AppMessageIView appMessageIView, AppMessageContract.AppMessageIModel appMessageIModel) {
+        super(appMessageIView, appMessageIModel);
     }
 
-    public void loginRequest(String appName, String mobile) {
+    public void AppRequest(String appName, String brand, String channel, String deviceModel, String deviceType, String uuid, String version) {
         Map<String, String> map = new HashMap<>();
         map.put("appName", appName);
-        map.put("mobile", mobile);
+        map.put("brand", brand);
+        map.put("channel", channel);
+        map.put("deviceModel", deviceModel);
+        map.put("deviceType", deviceType);
+        map.put("uuid", uuid);
+        map.put("version", version);
         String jsonStr = new Gson().toJson(map);
         RequestBody body = RequestBody.create(MediaType.parse("application/json"), jsonStr);
-        m.login_request(body)
+        m.app_message_request(body)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<BaseEntity<AppEntity>>() {
@@ -40,17 +46,17 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginIView, Logi
                     }
 
                     @Override
-                    public void onNext(BaseEntity<AppEntity> Entity) {
-                        if (Entity == null) {
+                    public void onNext(BaseEntity<AppEntity> appMessageEntity) {
+                        if (appMessageEntity == null) {
                             return;
                         } else {
-                            v.loginSuccess(Entity);
+                            v.AppMessageSuccess(appMessageEntity);
                         }
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        v.loginError(e.getMessage());
+                        v.AppMessageError(e.getMessage());
                     }
 
                     @Override

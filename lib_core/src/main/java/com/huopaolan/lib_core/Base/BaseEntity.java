@@ -1,11 +1,10 @@
 package com.huopaolan.lib_core.Base;
 
-public class BaseEntity {
-    public String errorCode;
-    public String errorMsg;
-    public String errorStack;
-    public String result;
-    public String returnCode;
+import java.io.Serializable;
+
+public class BaseEntity<T> implements Serializable {
     public boolean success;
+    public T result;
+    public String returnCode;
     public boolean timeOut;
 }

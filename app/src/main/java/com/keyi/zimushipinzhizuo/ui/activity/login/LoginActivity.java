@@ -15,8 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
+import com.huopaolan.lib_core.Base.BaseEntity;
 import com.keyi.zimushipinzhizuo.R;
-import com.keyi.zimushipinzhizuo.bean.LoginEntity;
+import com.keyi.zimushipinzhizuo.bean.AppEntity;
 import com.keyi.zimushipinzhizuo.compont.DaggerLoginComponent;
 import com.keyi.zimushipinzhizuo.contract.LoginContract;
 import com.keyi.zimushipinzhizuo.modules.LoginModules;
@@ -165,8 +166,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     @Override
-    public void loginSuccess(LoginEntity entity) {
-
+    public void loginSuccess(BaseEntity<AppEntity> entity) {
+        Toast.makeText(this, "" + entity.result, Toast.LENGTH_SHORT).show();
     }
 
     @Override

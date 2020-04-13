@@ -1,12 +1,11 @@
 package com.keyi.zimushipinzhizuo.api;
 
-import com.keyi.zimushipinzhizuo.bean.LoginEntity;
+import com.huopaolan.lib_core.Base.BaseEntity;
+import com.keyi.zimushipinzhizuo.bean.AppEntity;
 
 import io.reactivex.Observable;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 /**
@@ -17,7 +16,19 @@ public interface api {
 
     /**
      * 登录注册发送验证码
+     *
+     * @param body
+     * @return
      */
     @POST("standard/account/sendVerifyCode")
-    Observable<LoginEntity> login_request(@Body RequestBody body);
+    Observable<BaseEntity<AppEntity>> login_request(@Body RequestBody body);
+
+    /**
+     * 获取APP基础信息
+     *
+     * @param body
+     * @return
+     */
+    @POST("standard/common/base")
+    Observable<BaseEntity<AppEntity>> app_message_request(@Body RequestBody body);
 }
