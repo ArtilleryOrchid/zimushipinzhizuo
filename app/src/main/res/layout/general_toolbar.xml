@@ -1,32 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_70"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_72"
     android:background="@drawable/home_background">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/my"
-        android:layout_width="@dimen/dp_25"
+        android:layout_width="@dimen/dp_20"
         android:layout_height="@dimen/dp_20"
-        android:layout_marginStart="@dimen/dp_17"
-        android:layout_marginTop="@dimen/dp_40"
-        android:src="@drawable/my_icon" />
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_45"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/my_icon"
+        tools:ignore="NewApi" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/add_file"
-        android:layout_width="@dimen/dp_22"
-        android:layout_height="@dimen/dp_20"
-        android:layout_marginStart="@dimen/dp_17"
-        android:layout_marginTop="@dimen/dp_40"
+        android:layout_width="@dimen/dp_23"
+        android:layout_height="@dimen/sp_18"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_47"
         android:layout_toEndOf="@+id/my"
-        android:src="@drawable/add_file" />
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/add_file"
+        tools:ignore="NewApi" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/up_data"
-        android:layout_width="@dimen/dp_25"
+        android:layout_width="@dimen/dp_20"
         android:layout_height="@dimen/dp_20"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="@dimen/dp_40"
-        android:layout_marginRight="@dimen/dp_17"
-        android:src="@drawable/storage_dis" />
+        android:layout_marginTop="@dimen/dp_45"
+        android:layout_marginRight="@dimen/dp_19"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/storage_dis"
+        tools:ignore="NewApi" />
 </RelativeLayout>

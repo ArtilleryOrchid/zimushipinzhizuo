@@ -6,6 +6,7 @@ import com.keyi.zimushipinzhizuo.ui.widget.dialog.CustomDialog;
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -14,7 +15,7 @@ import com.wangjie.shadowviewhelper.ShadowProperty;
 import com.wangjie.shadowviewhelper.ShadowViewHelper;
 
 public class HomeActivity extends BaseActivity implements View.OnClickListener {
-    private ImageView my;
+    private ImageButton my;
     private RelativeLayout add_file_button;
 
     @Override

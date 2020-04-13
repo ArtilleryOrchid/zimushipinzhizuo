@@ -2,6 +2,7 @@ package com.keyi.zimushipinzhizuo.ui.activity.mine;
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -10,7 +11,7 @@ import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
 
 public class HelpAndFeedBackActivity extends BaseActivity implements View.OnClickListener {
-    private ImageView help_back;
+    private ImageButton help_back;
     private RelativeLayout interface_problem, function_problem, message_problem, rests_problem, product_problem, access_logout, qq;
     private Intent intent;
 

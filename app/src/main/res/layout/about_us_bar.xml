@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/dp_72"
     android:background="@drawable/home_background">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/about_us_back"
         android:layout_width="@dimen/dp_25"
         android:layout_height="@dimen/dp_20"
-        android:layout_marginStart="@dimen/dp_17"
+        android:layout_marginStart="@dimen/dp_16"
         android:layout_marginTop="@dimen/dp_35"
-        android:src="@drawable/blank_back" />
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/blank_back"
+        tools:ignore="NewApi" />
 
     <TextView
         android:layout_width="wrap_content"

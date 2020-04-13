@@ -2,6 +2,7 @@ package com.keyi.zimushipinzhizuo.ui.activity.mine;
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +18,7 @@ import com.keyi.zimushipinzhizuo.presenter.AppMessagePresenter;
 import com.keyi.zimushipinzhizuo.utils.PackageUtils;
 
 public class About_US_Activity extends BaseActivity<AppMessagePresenter> implements AppMessageContract.AppMessageIView, View.OnClickListener {
-    private ImageView about_us_back;
+    private ImageButton about_us_back;
     private TextView user_agreement, privacy_policy, app_version;
     private Intent intent;
 

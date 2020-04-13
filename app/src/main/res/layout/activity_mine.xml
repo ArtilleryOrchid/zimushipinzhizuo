@@ -15,7 +15,8 @@
         android:layout_height="@dimen/dp_28"
         android:layout_marginLeft="@dimen/dp_10"
         android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/back" />
+        android:src="@drawable/back"
+        tools:ignore="NewApi" />
 
     <ImageView
         android:id="@+id/header_image"

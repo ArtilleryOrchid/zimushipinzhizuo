@@ -2,6 +2,7 @@ package com.keyi.zimushipinzhizuo.ui.activity.mine;
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,7 +11,7 @@ import com.keyi.zimushipinzhizuo.R;
 
 public class HelpActivity extends BaseActivity implements View.OnClickListener {
     private TextView message_all;
-    private ImageView help_back;
+    private ImageButton help_back;
 
     @Override
     public int layoutID() {
