@@ -8,12 +8,13 @@
     tools:context=".ui.activity.mine.MineActivity">
 
 
-    <ImageView
+    <ImageButton
         android:id="@+id/mine_back"
-        android:layout_width="@dimen/dp_13"
-        android:layout_height="@dimen/dp_22"
-        android:layout_marginLeft="@dimen/dp_25"
         android:layout_marginTop="@dimen/dp_47"
+        android:layout_width="@dimen/dp_28"
+        android:layout_height="@dimen/dp_28"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:src="@drawable/back" />
 
     <ImageView
