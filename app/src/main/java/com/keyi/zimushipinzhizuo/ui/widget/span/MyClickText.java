@@ -19,6 +19,8 @@ public class MyClickText extends ClickableSpan {
     private Activity context;
     private String type;
     private Intent intent;
+    public final static String USER_AGREENMENT = "《用户协议》";
+    public final static String PRIVACY_POLICY = "《隐私政策》";
 
     public MyClickText(Activity context, String type) {
         this.context = context;
@@ -37,12 +39,12 @@ public class MyClickText extends ClickableSpan {
     @Override
     public void onClick(View widget) {
         switch (type) {
-            case "《用户协议》":
+            case USER_AGREENMENT :
                 intent = new Intent(context, HtmlActivity.class);
                 intent.putExtra("html", "user_agreement");
                 context.startActivity(intent);
                 break;
-            case "《隐私政策》":
+            case PRIVACY_POLICY :
                 intent = new Intent(context, HtmlActivity.class);
                 intent.putExtra("html", "privacy_policy");
                 context.startActivity(intent);

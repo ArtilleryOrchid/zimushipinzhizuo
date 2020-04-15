@@ -7,6 +7,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,12 +60,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         login_back = findViewById(R.id.login_back);
         login_back.setOnClickListener(this::onClick);
         user_agreement = findViewById(R.id.user_agreement);
-        user_agreement.setOnClickListener(this::onClick);
-        privacy_policy = findViewById(R.id.privacy_policy);
-        privacy_policy.setOnClickListener(this::onClick);
+        setSpan(user_agreement,getBaseContext().getString(R.string.agreement_or_policy));
     }
 
     private void showAgreeDialog(final CustomDialog.Builder builder) {
+        builder.setmLayoutId(R.layout.dialog_normal_layout);
         builder.setMessage(getBaseContext().getString(R.string.dialog_content));
         builder.setTitle(getBaseContext().getString(R.string.dialog_title));
         builder.setPositiveButton(getBaseContext().getString(R.string.dialog_agree_btn_text)
@@ -85,11 +85,12 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                     }
                 });
         CustomDialog customDialog = builder.create();
-        setSpan(builder.getMessageView());
+        setSpan(builder.getMessageView(), getBaseContext().getString(R.string.dialog_content));
         customDialog.show();
     }
 
     private void showIsExitAppDialog(final CustomDialog.Builder builder) {
+        builder.setmLayoutId(R.layout.dialog_exit_layout);
         builder.setTitle(getBaseContext().getString(R.string.dialog_exit_title));
         builder.setMessage(getBaseContext().getString(R.string.dialog_exit_nessage));
         builder.setPositiveButton(getBaseContext().getString(R.string.dialog_exit_positive)
@@ -112,9 +113,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         builder.create().show();
     }
 
-    private void setSpan(TextView messageView) {
-
-        SpannableString str = new SpannableString(getBaseContext().getString(R.string.dialog_content));
+    private void setSpan(TextView messageView, String string) {
+        SpannableString str = new SpannableString(string);
         int[] spanIndexs = getSpanIndexs(str.toString());
         int index = 0;
         for (int i = 0; i < spanIndexs.length / 2; i++) {
@@ -130,14 +130,14 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     private int[] getSpanIndexs(String string) {
         int count = 0;
-        for (int i = 0; i < string.length() - 1; i++) {
+        for (int i = 0; i < string.length(); i++) {
             if (string.charAt(i) == '《' || string.charAt(i) == '》') {
                 count++;
             }
         }
         int[] indexs = new int[count];
         count = 0;
-        for (int i = 0; i < string.length() - 1; i++) {
+        for (int i = 0; i < string.length(); i++) {
             if (string.charAt(i) == '《' || string.charAt(i) == '》') {
                 indexs[count++] = i;
             }
@@ -208,17 +208,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             case R.id.login_back:
                 startActivity(new Intent(this, HomeActivity.class));
                 finish();
-                break;
-            case R.id.user_agreement:
-            case R.id.privacy_policy:
-                if (v.getId() == R.id.user_agreement) {
-                    intent = new Intent(this, HtmlActivity.class);
-                    intent.putExtra("html", "user_agreement");
-                } else if (v.getId() == R.id.privacy_policy) {
-                    intent = new Intent(this, HtmlActivity.class);
-                    intent.putExtra("html", "privacy_policy");
-                }
-                startActivity(intent);
                 break;
         }
     }

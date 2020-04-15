@@ -430,5 +430,6 @@
     <dimen name="dialog_agree_tv_size">16sp</dimen>
     <dimen name="dialog_exit_title_text_size">18sp</dimen>
     <dimen name="dialog_exit_message_text_size">16sp</dimen>
+    <dimen name="toolbar_title_text_size">18sp</dimen>
 
 </resources>

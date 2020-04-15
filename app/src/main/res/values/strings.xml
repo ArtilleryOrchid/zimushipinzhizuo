@@ -38,4 +38,5 @@
     <string name="login">点击登录</string>
     <string name="login_morn">登录开通更多权限</string>
     <string name="login_vip">登陆开通权限</string>
+    <string name="agreement_or_policy">《用户协议》&amp;《隐私政策》 </string>
 </resources>

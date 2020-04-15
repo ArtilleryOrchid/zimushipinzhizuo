@@ -11,8 +11,8 @@
     <ImageButton
         android:id="@+id/mine_back"
         android:layout_marginTop="@dimen/dp_47"
-        android:layout_width="@dimen/dp_28"
-        android:layout_height="@dimen/dp_28"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
         android:layout_marginLeft="@dimen/dp_10"
         android:background="?android:attr/selectableItemBackgroundBorderless"
         android:src="@drawable/back"
