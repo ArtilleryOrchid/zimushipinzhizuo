@@ -28,5 +28,5 @@
 
     <include
         android:id="@+id/help_bar"
-        layout="@layout/help_bar" />
+        layout="@layout/activity_toolbar" />
 </RelativeLayout>

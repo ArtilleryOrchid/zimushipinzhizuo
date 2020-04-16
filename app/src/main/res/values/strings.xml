@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">字幕视频制作</string>
     <string name="dialog_title">用户协议和隐私政策提示</string>
-    <string name="dialog_content">亲爱的用户：\n\t\t\t\t您好，在您使用本应用之前，请您认证阅读并了解《用户协议》和《隐私政策》。点击“同意”即表示已阅读并同意全部条款</string>
+    <string name="dialog_content">亲爱的用户：\n\t\t\t\t您好，在您使用本应用之前，请您认证阅读并了解《用户协议》和《隐私政策》。点击“同意”即表示已阅读并同意全部条款。</string>
     <string name="dialog_agree_btn_text">同意</string>
     <string name="dialog_disagree_tv_text">不同意并退出>> </string>
     <string name="dialog_exit_title">提示</string>
@@ -39,4 +39,7 @@
     <string name="login_morn">登录开通更多权限</string>
     <string name="login_vip">登陆开通权限</string>
     <string name="agreement_or_policy">《用户协议》&amp;《隐私政策》 </string>
+    <string name="activity_title_project">项目</string>
+    <string name="activity_title_help_feedback">帮助与反馈</string>
+
 </resources>

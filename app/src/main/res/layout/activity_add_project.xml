@@ -49,6 +49,5 @@
         android:layout_marginRight="@dimen/dp_16" />
 
     <include
-        android:id="@+id/add_bar"
-        layout="@layout/add_layout_bar" />
+        layout="@layout/activity_toolbar" />
 </RelativeLayout>

@@ -28,6 +28,7 @@ import com.keyi.zimushipinzhizuo.ui.activity.mine.HtmlActivity;
 import com.keyi.zimushipinzhizuo.ui.widget.dialog.CustomDialog;
 import com.keyi.zimushipinzhizuo.ui.widget.span.CountdownButton;
 import com.keyi.zimushipinzhizuo.ui.widget.span.MyClickText;
+import com.keyi.zimushipinzhizuo.utils.FintsUtils;
 import com.keyi.zimushipinzhizuo.utils.SPUtils;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.LoginIView, View.OnClickListener {
@@ -85,6 +86,10 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                     }
                 });
         CustomDialog customDialog = builder.create();
+        builder.getMessageView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCNRegular());
+        builder.getTitleView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnFont());
+        builder.getNegativeView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCNRegular());
+        builder.getPositiveView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnFont());
         setSpan(builder.getMessageView(), getBaseContext().getString(R.string.dialog_content));
         customDialog.show();
     }
@@ -110,7 +115,12 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                     }
                 });
 
-        builder.create().show();
+        CustomDialog customDialog = builder.create();
+        builder.getMessageView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCNRegular());
+        builder.getTitleView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnFont());
+        builder.getNegativeView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCNRegular());
+        builder.getPositiveView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnFont());
+        customDialog.show();
     }
 
     private void setSpan(TextView messageView, String string) {

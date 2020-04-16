@@ -11,7 +11,8 @@ import com.keyi.zimushipinzhizuo.R;
 
 public class HelpActivity extends BaseActivity implements View.OnClickListener {
     private TextView message_all;
-    private ImageButton help_back;
+    private ImageButton backBtn;
+    private TextView mToolbarTitle;
 
     @Override
     public int layoutID() {
@@ -21,8 +22,10 @@ public class HelpActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void initView() {
         message_all = findViewById(R.id.message_all);
-        help_back = findViewById(R.id.help_back);
-        help_back.setOnClickListener(this::onClick);
+        mToolbarTitle = findViewById(R.id.toolbar_title);
+        mToolbarTitle.setText(getResources().getString(R.string.activity_title_help_feedback));
+        backBtn = findViewById(R.id.back_btn);
+        backBtn.setOnClickListener(this::onClick);
     }
 
     @Override
@@ -50,7 +53,7 @@ public class HelpActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.help_back:
+            case R.id.back_btn:
                 finish();
                 break;
         }

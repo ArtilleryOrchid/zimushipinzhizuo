@@ -4,11 +4,12 @@
     android:layout_height="@dimen/dp_72"
     android:background="@drawable/home_background">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/add_back"
-        android:layout_width="@dimen/dp_12"
-        android:layout_height="@dimen/dp_21"
-        android:layout_marginStart="@dimen/dp_16"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:layout_marginStart="@dimen/dp_17"
         android:layout_marginTop="@dimen/dp_35"
         android:src="@drawable/blank_back" />
 
@@ -17,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="@dimen/dp_17"
-        android:layout_marginTop="@dimen/dp_35"
+        android:layout_marginTop="@dimen/dp_39"
         android:text="项目"
         android:textColor="#ff333333"
         android:textSize="@dimen/sp_18" />

@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
@@ -12,6 +13,7 @@ import com.keyi.zimushipinzhizuo.R;
 
 public class HelpAndFeedBackActivity extends BaseActivity implements View.OnClickListener {
     private ImageButton help_back;
+    private TextView toolbarTitle;
     private RelativeLayout interface_problem, function_problem, message_problem, rests_problem, product_problem, access_logout, qq;
     private Intent intent;
 
@@ -22,8 +24,10 @@ public class HelpAndFeedBackActivity extends BaseActivity implements View.OnClic
 
     @Override
     public void initView() {
-        help_back = findViewById(R.id.help_back);
+        help_back = findViewById(R.id.back_btn);
         help_back.setOnClickListener(this::onClick);
+        toolbarTitle = findViewById(R.id.toolbar_title);
+        toolbarTitle.setText(getResources().getString(R.string.activity_title_help_feedback));
         interface_problem = findViewById(R.id.interface_problem);
         interface_problem.setOnClickListener(this::onClick);
         function_problem = findViewById(R.id.function_problem);
@@ -63,7 +67,7 @@ public class HelpAndFeedBackActivity extends BaseActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.help_back:
+            case R.id.back_btn:
                 finish();
                 break;
             case R.id.interface_problem:
