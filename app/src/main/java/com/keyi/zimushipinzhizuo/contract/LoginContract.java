@@ -10,12 +10,18 @@ import okhttp3.RequestBody;
 
 public interface LoginContract {
     interface LoginIView extends IView {
+        void codeSuccess(BaseEntity<AppEntity> entity);
+
+        void codeError(String error);
+
         void loginSuccess(BaseEntity<AppEntity> entity);
 
-        void loginError(String error);
+        void loginError(String entity);
     }
 
     interface LoginIModel extends IModel {
+        Observable<BaseEntity<AppEntity>> code_request(RequestBody body);
+
         Observable<BaseEntity<AppEntity>> login_request(RequestBody body);
     }
 }

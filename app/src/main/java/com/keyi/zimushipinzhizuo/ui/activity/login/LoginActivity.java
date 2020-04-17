@@ -7,7 +7,6 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,8 +27,11 @@ import com.keyi.zimushipinzhizuo.ui.activity.mine.HtmlActivity;
 import com.keyi.zimushipinzhizuo.ui.widget.dialog.CustomDialog;
 import com.keyi.zimushipinzhizuo.ui.widget.span.CountdownButton;
 import com.keyi.zimushipinzhizuo.ui.widget.span.MyClickText;
+import com.keyi.zimushipinzhizuo.utils.DeviceIdUtils;
 import com.keyi.zimushipinzhizuo.utils.FintsUtils;
+import com.keyi.zimushipinzhizuo.utils.PackageUtils;
 import com.keyi.zimushipinzhizuo.utils.SPUtils;
+import com.keyi.zimushipinzhizuo.utils.SystemUtil;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.LoginIView, View.OnClickListener {
     private Button login_button;
@@ -61,7 +63,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         login_back = findViewById(R.id.login_back);
         login_back.setOnClickListener(this::onClick);
         user_agreement = findViewById(R.id.user_agreement);
-        setSpan(user_agreement,getBaseContext().getString(R.string.agreement_or_policy));
+        setSpan(user_agreement, getBaseContext().getString(R.string.agreement_or_policy));
     }
 
     private void showAgreeDialog(final CustomDialog.Builder builder) {
@@ -176,19 +178,35 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     @Override
-    public void loginSuccess(BaseEntity<AppEntity> entity) {
-        Toast.makeText(this, "" + entity.result, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void loginError(String error) {
-
-    }
-
-    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_button:
+                boolean login_flag = true;
+                if (TextUtils.isEmpty(phone.getText().toString().trim())) {
+                    Toast.makeText(this, "请输入您的电话号码", Toast.LENGTH_LONG).show();
+                    phone.requestFocus();
+                    login_flag = false;
+                } else if (phone.getText().toString().trim().length() != 11) {
+                    Toast.makeText(this, "您的电话号码位数不正确", Toast.LENGTH_LONG).show();
+                    phone.requestFocus();
+                    login_flag = false;
+                } else {
+                    String phone_number = phone.getText().toString().trim();
+                    String num = "[1][3578]\\d{9}";
+                    if (phone_number.matches(num))
+                        login_flag = false;
+                    else {
+                        Toast.makeText(this, "请输入正确的手机号码", Toast.LENGTH_LONG).show();
+                        login_flag = false;
+                    }
+                }
+                if (!login_flag) {
+                    String code_id = access.getText().toString();
+                    String phone_id = phone.getText().toString();
+                    String deviceId = DeviceIdUtils.getDeviceId(getApplication());
+                    String accountId = SPUtils.getInstance().getString("accountId", "");
+                    p.loginRequest(accountId, "ZIMUSHIPINZHIZUO_KEYI", SystemUtil.getDeviceBrand(), "", SystemUtil.getSystemModel(), "ANDROID", "", phone_id, deviceId, code_id, PackageUtils.getVersionName(this));
+                }
                 break;
             case R.id.get_access:
                 boolean flag = true;
@@ -212,7 +230,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 }
                 if (!flag) {
                     String s = phone.getText().toString();
-                    p.loginRequest("ZIMUSHIPINZHIZUO_KEYI", s);
+                    p.codeRequest("ZIMUSHIPINZHIZUO_KEYI", s);
                 }
                 break;
             case R.id.login_back:
@@ -220,5 +238,33 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 finish();
                 break;
         }
+    }
+
+    @Override
+    public void codeSuccess(BaseEntity<AppEntity> entity) {
+
+    }
+
+    @Override
+    public void codeError(String error) {
+
+    }
+
+    @Override
+    public void loginSuccess(BaseEntity<AppEntity> entity) {
+        if (entity.success == true) {
+            SPUtils.getInstance().putString("login", entity.result.isNew);
+            SPUtils.getInstance().getString("accountId", entity.result.accountId);
+            SPUtils.getInstance().getString("token", entity.result.token);
+            startActivity(new Intent(this, HomeActivity.class));
+            finish();
+        } else {
+            Toast.makeText(this, "登录失败", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void loginError(String entity) {
+
     }
 }

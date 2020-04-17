@@ -21,6 +21,15 @@ public interface api {
      * @return
      */
     @POST("standard/account/sendVerifyCode")
+    Observable<BaseEntity<AppEntity>> code_request(@Body RequestBody body);
+
+    /**
+     * 登录
+     *
+     * @param body
+     * @return
+     */
+    @POST("standard/account/login")
     Observable<BaseEntity<AppEntity>> login_request(@Body RequestBody body);
 
     /**

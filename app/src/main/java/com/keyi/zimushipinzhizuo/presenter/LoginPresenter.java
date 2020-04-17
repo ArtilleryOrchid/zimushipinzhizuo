@@ -24,13 +24,13 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginIView, Logi
         super(loginIView, loginIModel);
     }
 
-    public void loginRequest(String appName, String mobile) {
+    public void codeRequest(String appName, String mobile) {
         Map<String, String> map = new HashMap<>();
         map.put("appName", appName);
         map.put("mobile", mobile);
         String jsonStr = new Gson().toJson(map);
         RequestBody body = RequestBody.create(MediaType.parse("application/json"), jsonStr);
-        m.login_request(body)
+        m.code_request(body)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<BaseEntity<AppEntity>>() {
@@ -44,7 +44,55 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginIView, Logi
                         if (Entity == null) {
                             return;
                         } else {
-                            v.loginSuccess(Entity);
+                            v.codeSuccess(Entity);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        v.codeError(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    public void loginRequest(String accountId, String appName, String brand, String channel, String deviceModel, String deviceType, String headImg, String mobile, String uuid, String verifyCode, String version) {
+        Map<String, String> map = new HashMap<>();
+        if (accountId.equals("")) {
+            map.put("accountId", "");
+        } else {
+            map.put("accountId", accountId);
+        }
+        map.put("appName", appName);
+        map.put("brand", brand);
+        map.put("channel", channel);
+        map.put("deviceModel", deviceModel);
+        map.put("deviceType", deviceType);
+        map.put("headImg", headImg);
+        map.put("mobile", mobile);
+        map.put("uuid", uuid);
+        map.put("verifyCode", verifyCode);
+        map.put("version", version);
+        String jsonStr = new Gson().toJson(map);
+        RequestBody body = RequestBody.create(MediaType.parse("application/json"), jsonStr);
+        m.login_request(body).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<BaseEntity<AppEntity>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(BaseEntity<AppEntity> entity) {
+                        if (entity == null) {
+                            return;
+                        } else {
+                            v.loginSuccess(entity);
                         }
                     }
 

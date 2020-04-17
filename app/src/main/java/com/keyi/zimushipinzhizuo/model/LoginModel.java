@@ -18,6 +18,11 @@ public class LoginModel extends BaseModel implements LoginContract.LoginIModel {
     }
 
     @Override
+    public Observable<BaseEntity<AppEntity>> code_request(RequestBody body) {
+        return MResponseManager.obtainRetrofit(api.class).code_request(body);
+    }
+
+    @Override
     public Observable<BaseEntity<AppEntity>> login_request(RequestBody body) {
         return MResponseManager.obtainRetrofit(api.class).login_request(body);
     }
