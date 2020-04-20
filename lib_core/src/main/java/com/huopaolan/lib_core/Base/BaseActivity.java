@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.huopaolan.lib_core.Mvp.Presenter.IPresenter;
 import com.huopaolan.lib_core.Mvp.View.IView;
 import com.huopaolan.lib_core.utils.StatusBarUtils;
+import com.huopaolan.lib_core.utils.UtilHelpers;
 
 import javax.inject.Inject;
 
@@ -60,5 +62,19 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     @Override
     public void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                View view = getCurrentFocus();
+                UtilHelpers.hideKeyboard(ev, view, BaseActivity.this);//调用方法判断是否需要隐藏键盘
+                break;
+
+            default:
+                break;
+        }
+        return super.dispatchTouchEvent(ev);
     }
 }
