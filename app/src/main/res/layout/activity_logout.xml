@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDark"
+    android:orientation="vertical"
     tools:context=".ui.activity.logout.LogoutActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/close_logout"
+        android:layout_width="@dimen/dp_184"
+        android:layout_height="@dimen/dp_40"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_43"
+        android:background="@drawable/dialog_btn_agree_bg"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/close"
+        android:textColor="@color/close_color"
+        android:textSize="@dimen/sp_16" />
+
+    <include
+        android:id="@+id/logout_bar"
+        layout="@layout/logout_bar" />
+</RelativeLayout>

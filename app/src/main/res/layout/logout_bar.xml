@@ -5,23 +5,13 @@
     android:layout_height="@dimen/dp_72"
     android:background="@drawable/home_background">
 
-    <ImageButton
-        android:id="@+id/add_back"
-        android:layout_width="@dimen/dp_24"
-        android:layout_height="@dimen/dp_24"
-        android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:layout_marginStart="@dimen/dp_17"
-        android:layout_marginTop="@dimen/dp_35"
-        android:src="@drawable/blank_back"
-        tools:ignore="NewApi" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="@dimen/dp_17"
-        android:layout_marginTop="@dimen/dp_39"
-        android:text="@string/product_text"
+        android:layout_marginTop="@dimen/dp_35"
+        android:text="@string/logout"
         android:textColor="@color/logout_color"
         android:textSize="@dimen/sp_18" />
 </RelativeLayout>

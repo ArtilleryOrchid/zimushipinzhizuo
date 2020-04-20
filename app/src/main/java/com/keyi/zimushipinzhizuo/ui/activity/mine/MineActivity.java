@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -97,7 +98,11 @@ public class MineActivity extends BaseActivity implements View.OnClickListener {
             case R.id.login:
             case R.id.login_vip:
                 if (loginId.equals("NO")) {
-                    Toast.makeText(this, "敬请期待", Toast.LENGTH_SHORT).show();
+                    if (TextUtils.equals(login_vip.getText().toString(), "立即开通vip") && v.getId() == R.id.login_vip) {
+                        startActivity(new Intent(this, VIPActivity.class));
+                    } else {
+                        Toast.makeText(this, "敬请期待", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     SPUtils.getInstance().getBoolean("first", true);
                     startActivity(new Intent(this, LoginActivity.class));

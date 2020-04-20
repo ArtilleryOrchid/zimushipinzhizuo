@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDark"
+    tools:context=".ui.activity.mine.VIPActivity">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_150">
+
+        <ImageView
+            android:layout_width="@dimen/dp_328"
+            android:layout_height="@dimen/dp_162"
+            android:src="@drawable/vip_card_background" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="@string/vip_text"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/dp_21" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_107">
+
+        <ImageView
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_19"
+            android:layout_marginRight="@dimen/dp_6"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/vip_left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/along_vip"
+            android:textColor="@color/logout_color"
+            android:textSize="@dimen/sp_18" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_28"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_height="@dimen/dp_19"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/vip_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_347">
+
+        <ImageView
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_19"
+            android:layout_marginRight="@dimen/dp_6"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/vip_left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vip"
+            android:textColor="@color/logout_color"
+            android:textSize="@dimen/sp_18" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_28"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/dp_19"
+            android:src="@drawable/vip_right" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_113"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="@dimen/dp_102"
+            android:layout_height="@dimen/dp_137"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_11"
+            android:background="@drawable/dialog_bg_shape"
+            android:button="@null" />
+
+        <RadioButton
+            android:layout_width="@dimen/dp_102"
+            android:layout_height="@dimen/dp_137"
+            android:layout_marginRight="@dimen/dp_11"
+            android:background="@drawable/dialog_bg_shape"
+            android:button="@null" />
+
+        <RadioButton
+            android:layout_width="@dimen/dp_102"
+            android:layout_height="@dimen/dp_137"
+            android:layout_marginRight="@dimen/sp_16"
+            android:button="@null" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/vip_pay"
+        android:layout_width="@dimen/dp_149"
+        android:layout_height="@dimen/dp_40"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_43"
+        android:background="@drawable/dialog_btn_agree_bg"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/vip_right"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/sp_16" />
+
+    <include layout="@layout/vip_bar" />
+</RelativeLayout>

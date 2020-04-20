@@ -18,7 +18,8 @@
             android:layout_height="@dimen/dp_24"
             android:layout_marginLeft="@dimen/dp_16"
             android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/blank_back" />
+            android:src="@drawable/blank_back"
+            tools:ignore="NewApi" />
 
         <TextView
             android:layout_width="wrap_content"

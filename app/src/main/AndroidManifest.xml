@@ -10,7 +10,8 @@
         android:roundIcon="@drawable/phone_log"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.mine.HtmlActivity"></activity>
+        <activity android:name=".ui.activity.mine.VIPActivity"></activity>
+        <activity android:name=".ui.activity.mine.HtmlActivity" />
         <activity android:name=".ui.activity.mine.HelpActivity" />
         <activity android:name=".ui.activity.mine.About_US_Activity" />
         <activity android:name=".ui.activity.home.AddProjectActivity" />
@@ -27,11 +28,12 @@
             </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>

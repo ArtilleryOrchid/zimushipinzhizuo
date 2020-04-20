@@ -3,7 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#FAFAFA</color>
     <color name="colorAccent">#FF4081</color>
-
     <color name="dialog_bg_color">#ffffffff</color>
     <color name="dialog_title_text_color">#ff545454</color>
     <color name="dialog_content_text_color">#ff000000</color>
@@ -22,5 +21,6 @@
     <color name="min_text_color">#ff666666</color>
     <color name="toolbar_title_text_color">#FF333333</color>
     <color name="toolbar_bg_color">#ffffffff</color>
-
+    <color name="logout_color">#ff333333</color>
+    <color name="close_color">#ffffffff</color>
 </resources>

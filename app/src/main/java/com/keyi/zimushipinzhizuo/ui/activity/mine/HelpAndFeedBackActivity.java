@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
+import com.keyi.zimushipinzhizuo.ui.activity.logout.LogoutActivity;
+import com.keyi.zimushipinzhizuo.utils.CommonDialog;
 
 public class HelpAndFeedBackActivity extends BaseActivity implements View.OnClickListener {
     private ImageButton help_back;
@@ -94,10 +96,32 @@ public class HelpAndFeedBackActivity extends BaseActivity implements View.OnClic
                 startActivity(intent);
                 break;
             case R.id.access_logout:
+                initDialog();
                 break;
             default:
                 Toast.makeText(this, "敬请期待", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    private void initDialog() {
+        final CommonDialog dialog = new CommonDialog(this);
+        dialog.setMessage("温馨提示").setSingle(false).setOnClickBottomListener(new CommonDialog.OnClickBottomListener() {
+            @Override
+            public void onPositiveClick() {
+                dialog.dismiss();
+            }
+
+            @Override
+            public void onNegtiveClick() {
+                dialog.dismiss();
+                startActivity(new Intent(HelpAndFeedBackActivity.this, LogoutActivity.class));
+            }
+
+            @Override
+            public void onClose() {
+                dialog.dismiss();
+            }
+        }).show();
     }
 }
