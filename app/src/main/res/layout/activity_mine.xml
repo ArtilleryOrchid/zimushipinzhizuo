@@ -135,7 +135,7 @@
             android:background="@drawable/dialog_btn_agree_bg"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/login"
-            android:textColor="#ffffffff"
+            android:textColor="@color/close_color"
             android:textSize="@dimen/sp_14" />
     </LinearLayout>
 

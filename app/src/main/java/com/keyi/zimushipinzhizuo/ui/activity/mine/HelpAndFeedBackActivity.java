@@ -3,14 +3,13 @@ package com.keyi.zimushipinzhizuo.ui.activity.mine;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
-import com.keyi.zimushipinzhizuo.ui.activity.logout.LogoutActivity;
+import com.keyi.zimushipinzhizuo.ui.activity.logout.UnsubscribeActivity;
 import com.keyi.zimushipinzhizuo.utils.CommonDialog;
 
 public class HelpAndFeedBackActivity extends BaseActivity implements View.OnClickListener {
@@ -115,7 +114,7 @@ public class HelpAndFeedBackActivity extends BaseActivity implements View.OnClic
             @Override
             public void onNegtiveClick() {
                 dialog.dismiss();
-                startActivity(new Intent(HelpAndFeedBackActivity.this, LogoutActivity.class));
+                startActivity(new Intent(HelpAndFeedBackActivity.this, UnsubscribeActivity.class));
             }
 
             @Override

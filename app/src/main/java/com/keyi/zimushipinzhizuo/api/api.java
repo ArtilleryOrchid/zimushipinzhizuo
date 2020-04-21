@@ -13,6 +13,8 @@ import retrofit2.http.POST;
  */
 public interface api {
     public static String API = "https://test99.rhinox.cn/";
+    public static int ALIPAY = 0;
+    public static int WECHAT = 1;
 
     /**
      * 登录注册发送验证码
@@ -40,4 +42,13 @@ public interface api {
      */
     @POST("standard/common/base")
     Observable<BaseEntity<AppEntity>> app_message_request(@Body RequestBody body);
+
+    /**
+     * 退出登录
+     *
+     * @param body
+     * @return
+     */
+    @POST("/standard/account/logout")
+    Observable<BaseEntity<AppEntity>> logout_request(@Body RequestBody body);
 }

@@ -23,4 +23,7 @@
     <color name="toolbar_bg_color">#ffffffff</color>
     <color name="logout_color">#ff333333</color>
     <color name="close_color">#ffffffff</color>
+    <color name="darks">#ff999999</color>
+    <color name="vip_mo">#ff666666</color>
+    <color name="yellow">#fff6b016</color>
 </resources>

@@ -8,10 +8,12 @@ import android.widget.Toast;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
+import com.keyi.zimushipinzhizuo.utils.PayWayDialog;
 
 public class VIPActivity extends BaseActivity implements View.OnClickListener {
     private ImageButton vip_back;
     private TextView vip_pay;
+    private PayWayDialog payWayDialog;
 
     @Override
     public int layoutID() {
@@ -53,8 +55,14 @@ public class VIPActivity extends BaseActivity implements View.OnClickListener {
                 finish();
                 break;
             case R.id.vip_pay:
-                Toast.makeText(this, "敬请期待", Toast.LENGTH_SHORT).show();
+                initPayDialog();
                 break;
         }
+    }
+
+    private void initPayDialog() {
+        payWayDialog = new PayWayDialog(this, R.style.recharge_pay_dialog);
+        payWayDialog.show();
+        payWayDialog.setRechargeNum("198");
     }
 }

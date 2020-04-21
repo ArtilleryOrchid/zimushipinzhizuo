@@ -10,14 +10,14 @@
         android:roundIcon="@drawable/phone_log"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.mine.VIPActivity"></activity>
+        <activity android:name=".ui.activity.mine.VIPActivity" />
         <activity android:name=".ui.activity.mine.HtmlActivity" />
         <activity android:name=".ui.activity.mine.HelpActivity" />
         <activity android:name=".ui.activity.mine.About_US_Activity" />
         <activity android:name=".ui.activity.home.AddProjectActivity" />
         <activity android:name=".ui.activity.mine.HelpAndFeedBackActivity" />
         <activity android:name=".ui.activity.mine.MineActivity" />
-        <activity android:name=".ui.activity.logout.LogoutActivity" />
+        <activity android:name=".ui.activity.logout.UnsubscribeActivity" />
         <activity android:name=".ui.activity.login.LoginActivity" />
         <activity android:name=".ui.activity.home.HomeActivity" />
         <activity android:name=".ui.activity.login.SplashActivity">
@@ -27,13 +27,44 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".pay.alipay.PayDemoActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name=".pay.alipay.H5PayDemoActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name=".pay.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+
+        <receiver
+            android:name=".AppRegister"
+            android:permission="com.tencent.mm.plugin.permission.SEND">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
     </application>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 </manifest>

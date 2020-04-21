@@ -2,6 +2,7 @@ package com.keyi.zimushipinzhizuo.ui.activity.mine;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -16,12 +17,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
+import com.huopaolan.lib_core.Base.BaseEntity;
 import com.keyi.zimushipinzhizuo.R;
+import com.keyi.zimushipinzhizuo.bean.AppEntity;
+import com.keyi.zimushipinzhizuo.compont.DaggerMineComponent;
+import com.keyi.zimushipinzhizuo.contract.MineContract;
+import com.keyi.zimushipinzhizuo.modules.MineModules;
+import com.keyi.zimushipinzhizuo.presenter.MinePresenter;
 import com.keyi.zimushipinzhizuo.ui.activity.home.HomeActivity;
 import com.keyi.zimushipinzhizuo.ui.activity.login.LoginActivity;
+import com.keyi.zimushipinzhizuo.utils.DeviceIdUtils;
+import com.keyi.zimushipinzhizuo.utils.PackageUtils;
 import com.keyi.zimushipinzhizuo.utils.SPUtils;
+import com.keyi.zimushipinzhizuo.utils.SystemUtil;
 
-public class MineActivity extends BaseActivity implements View.OnClickListener {
+public class MineActivity extends BaseActivity<MinePresenter> implements MineContract.MineIView, View.OnClickListener {
     private ImageView mine_back;
     private TextView login, login_vip, login_morn;
     private LinearLayout help;
@@ -29,6 +39,7 @@ public class MineActivity extends BaseActivity implements View.OnClickListener {
     private LinearLayout memory_close;
     private RelativeLayout user_message;
     private String loginId;
+    private boolean refreshActivity = false;
 
     @Override
     public int layoutID() {
@@ -63,15 +74,25 @@ public class MineActivity extends BaseActivity implements View.OnClickListener {
             login_morn.setText("会员ID:1000");
             login_vip.setText("立即开通vip");
             login.setText("退出登录");
-            login.setTextColor(R.color.dialog_content_text_color);
+            ColorStateList dark_color = getResources().getColorStateList(R.color.logout_color);
+            login.setTextColor(dark_color);
             Drawable drawable = getResources().getDrawable(R.drawable.mine_out_background, null);
+            login.setBackground(drawable);
+        } else {
+            user_message.setVisibility(View.GONE);
+            login_morn.setText("登录开通更多权限");
+            login_vip.setText("登录开通权限");
+            login.setText("点击登录");
+            ColorStateList color = getResources().getColorStateList(R.color.close_color);
+            login.setTextColor(color);
+            Drawable drawable = getResources().getDrawable(R.drawable.dialog_btn_agree_bg, null);
             login.setBackground(drawable);
         }
     }
 
     @Override
     public void setUpDagger() {
-
+        DaggerMineComponent.builder().mineModules(new MineModules(this)).build().inject(this);
     }
 
     @Override
@@ -89,6 +110,8 @@ public class MineActivity extends BaseActivity implements View.OnClickListener {
         super.onDestroy();
     }
 
+    @SuppressLint("ResourceAsColor")
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -97,11 +120,23 @@ public class MineActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.login:
             case R.id.login_vip:
-                if (loginId.equals("NO")) {
+                if (!refreshActivity && loginId.equals("NO")) {
                     if (TextUtils.equals(login_vip.getText().toString(), "立即开通vip") && v.getId() == R.id.login_vip) {
                         startActivity(new Intent(this, VIPActivity.class));
                     } else {
-                        Toast.makeText(this, "敬请期待", Toast.LENGTH_SHORT).show();
+                        refreshActivity = true;
+                        user_message.setVisibility(View.GONE);
+                        login_morn.setText("登录开通更多权限");
+                        login_vip.setText("登录开通权限");
+                        login.setText("点击登录");
+                        ColorStateList color = getResources().getColorStateList(R.color.close_color);
+                        login.setTextColor(color);
+                        Drawable drawable = getResources().getDrawable(R.drawable.dialog_btn_agree_bg, null);
+                        login.setBackground(drawable);
+                        SPUtils.getInstance().putString("login", "OFF");
+                        String deviceId = DeviceIdUtils.getDeviceId(getApplication());
+                        String accountId = SPUtils.getInstance().getString("accountId", "");
+                        p.LogoutRequest(accountId, "ZIMUSHIPINZHIZUO_KEYI", SystemUtil.getDeviceBrand(), "", SystemUtil.getSystemModel(), "ANDROID", "", deviceId, PackageUtils.getVersionName(this));
                     }
                 } else {
                     SPUtils.getInstance().getBoolean("first", true);
@@ -117,5 +152,17 @@ public class MineActivity extends BaseActivity implements View.OnClickListener {
             case R.id.memory_close:
                 break;
         }
+    }
+
+    @Override
+    public void logoutSuccess(BaseEntity<AppEntity> entity) {
+        if (entity.success == true) {
+            SPUtils.getInstance().putString("login", "OFF");
+        }
+    }
+
+    @Override
+    public void logoutError(String entity) {
+
     }
 }

@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
 
-public class LogoutActivity extends BaseActivity implements View.OnClickListener {
+public class UnsubscribeActivity extends BaseActivity implements View.OnClickListener {
     private TextView close_logout;
 
     @Override

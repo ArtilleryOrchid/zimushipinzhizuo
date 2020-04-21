@@ -254,8 +254,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     public void loginSuccess(BaseEntity<AppEntity> entity) {
         if (entity.success == true) {
             SPUtils.getInstance().putString("login", entity.result.isNew);
-            SPUtils.getInstance().getString("accountId", entity.result.accountId);
-            SPUtils.getInstance().getString("token", entity.result.token);
+            SPUtils.getInstance().putString("accountId", entity.result.accountId);
+            SPUtils.getInstance().putString("token", entity.result.token);
             startActivity(new Intent(this, HomeActivity.class));
             finish();
         } else {
