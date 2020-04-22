@@ -49,6 +49,7 @@
             android:layout_height="wrap_content">
             <com.keyi.zimushipinzhizuo.ui.widget.textview.CustomEditTextView
                 android:id="@+id/phone"
+                android:textCursorDrawable="@drawable/edit_text_shape"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_50"
                 android:inputType="phone"
@@ -77,6 +78,7 @@
                 android:textColor="#ff56abfb"
                 android:textSize="@dimen/sp_14" />
             <com.keyi.zimushipinzhizuo.ui.widget.textview.CustomEditTextView
+                android:textCursorDrawable="@drawable/edit_text_shape"
                 android:id="@+id/access"
                 android:layout_width="wrap_content"
                 android:layout_centerVertical="true"
