@@ -56,6 +56,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         }
         login_button = findViewById(R.id.login_button);
         login_button.setOnClickListener(this::onClick);
+        login_button.setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnBoldFont());
         phone = findViewById(R.id.phone);
         access = findViewById(R.id.access);
         get_access = findViewById(R.id.get_access);
@@ -89,9 +90,9 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 });
         CustomDialog customDialog = builder.create();
         builder.getMessageView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCNRegular());
-        builder.getTitleView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnFont());
+        builder.getTitleView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnBoldFont());
         builder.getNegativeView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCNRegular());
-        builder.getPositiveView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnFont());
+        builder.getPositiveView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnBoldFont());
         setSpan(builder.getMessageView(), getBaseContext().getString(R.string.dialog_content));
         customDialog.show();
     }
@@ -119,9 +120,9 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
         CustomDialog customDialog = builder.create();
         builder.getMessageView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCNRegular());
-        builder.getTitleView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnFont());
+        builder.getTitleView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnBoldFont());
         builder.getNegativeView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCNRegular());
-        builder.getPositiveView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnFont());
+        builder.getPositiveView().setTypeface(FintsUtils.getInstance(this).getSourceHanSansCnBoldFont());
         customDialog.show();
     }
 

@@ -42,7 +42,7 @@ public class FintsUtils {
     public Typeface getMuyaoSoftBrushFont() {
         return Typeface.createFromAsset(mContext.getAssets(), FintsPathInfo.MU_YAO_SOFTBRUSH);
     }
-    public Typeface getSourceHanSansCnFont() {
+    public Typeface getSourceHanSansCnBoldFont() {
         return Typeface.createFromAsset(mContext.getAssets(), FintsPathInfo.SOURCE_HAN_SANS_CN_BOLD);
     }
     public Typeface getTaiWanQuanZiKuZhengKaiTiFont() {
@@ -54,5 +54,9 @@ public class FintsUtils {
 
     public Typeface getSourceHanSansCNRegular() {
         return Typeface.createFromAsset(mContext.getAssets(), FintsPathInfo.SOURCE_HANSANS_CN_REGULAR);
+    }
+
+    public Typeface getSourceHanSansCNMedium() {
+        return Typeface.createFromAsset(mContext.getAssets(), FintsPathInfo.SOURCE_HAN_SANS_CN_MEDIUM);
     }
 }

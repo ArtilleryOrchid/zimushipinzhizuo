@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <declare-styleable name="CustomTextView">
+        <attr name="typeface">
+            <enum name="aa_chao_mian_jin" value="0"/>
+            <enum name="aa_xin_hua_shuang_jian_ti" value="1"/>
+            <enum name="ali_hyai_hei" value="2"/>
+            <enum name="gen_ryu_min_jp" value="3"/>
+            <enum name="muyao_soft_brush" value="4"/>
+            <enum name="source_han_sans_cn_bold" value="5"/>
+            <enum name="source_han_sans_cn_medium" value="6"/>
+            <enum name="source_han_sans_cn_regular" value="7"/>
+            <enum name="tai_wan_quan_zi_ku_zheng_kai_ti" value="8"/>
+            <enum name="zhang_ku_ku_hei" value="9"/>
+        </attr>
+    </declare-styleable>
 </resources>
