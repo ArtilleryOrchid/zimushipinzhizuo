@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/dp_276"
     android:layout_height="@dimen/dp_290"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_centerInParent="true"
     android:background="@drawable/bg_dialog"
     android:minWidth="@dimen/dp_276"
@@ -43,7 +44,7 @@
             android:id="@+id/positive"
             android:layout_width="@dimen/dp_113"
             android:layout_height="@dimen/dp_40"
-            android:background="@drawable/logout_bg_orager"
+            android:background="@drawable/dialog_btn_agree_bg"
             android:gravity="center"
             android:singleLine="true"
             android:textColor="@color/close_color"
@@ -51,25 +52,19 @@
             tools:text="Yes" />
     </LinearLayout>
 
-    <TextView
+    <com.keyi.zimushipinzhizuo.ui.widget.textview.CustomTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:typeface="source_han_sans_cn_regular"
         android:layout_centerHorizontal="true"
+        android:lineSpacingMultiplier="1.2"
         android:layout_marginTop="@dimen/dp_92"
         android:text="@string/app_app"
         android:textColor="#ff333333"
         android:textSize="@dimen/sp_14" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dp_155"
-        android:text="@string/app"
-        android:textColor="#ff333333"
-        android:textSize="@dimen/sp_14" />
-
-    <TextView
+    <com.keyi.zimushipinzhizuo.ui.widget.textview.CustomTextView
+        app:typeface="source_han_sans_cn_bold"
         android:id="@+id/titles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -79,7 +74,8 @@
         android:textSize="@dimen/sp_18"
         tools:text="@string/hint" />
 
-    <TextView
+    <com.keyi.zimushipinzhizuo.ui.widget.textview.CustomTextView
+        app:typeface="source_han_sans_cn_regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp_15"

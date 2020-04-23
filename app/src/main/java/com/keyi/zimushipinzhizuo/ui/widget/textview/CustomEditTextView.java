@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
-import android.widget.EditText;
 
 import com.keyi.zimushipinzhizuo.R;
 import com.keyi.zimushipinzhizuo.bean.FintsPathInfo;
@@ -45,7 +44,7 @@ public class CustomEditTextView extends AppCompatEditText {
         Typeface typeface = null;
 
         if (a.hasValue(R.styleable.CustomTextView_typeface)) {
-            int typeFaceValue = a.getInt(R.styleable.CustomTextView_typeface, -1);
+            int typeFaceValue = a.getInt(R.styleable.CustomTextView_typeface, FintsPathInfo.DEFAULT_TEXT_FINT_ATTRS);
             switch (typeFaceValue) {
                 case FintsPathInfo.DEFAULT_TEXT_FINT_ATTRS :
                     typeface = Typeface.DEFAULT;

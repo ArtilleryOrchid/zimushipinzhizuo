@@ -51,9 +51,8 @@
     <string name="along_vip">vip独有特权</string>
     <string name="vip_text">多种字体随心编辑\n\t\t无限制导出次数\n\t\t超清无水印导出</string>
     <string name="vip_right">立即支付</string>
-    <string name="app_app">\t\t账号一旦注销成功，我们将清除当前\nAPP的所有数据，您将再也无法使用此\n账号注册/登录当前APP。</string>
+    <string name="app_app">\t\t账号一旦注销成功，我们将清除当前\nAPP的所有数据，您将再也无法使用此\n账号注册/登录当前APP。\n\n\t\t同时也无法享受以及使用当前APP提\n供的任何服务</string>
     <string name="user_message">亲爱的用户：</string>
-    <string name="app">\t\t同时也无法享受以及使用当前APP提\n供的任何服务</string>
     <string name="hint">温馨提示</string>
     <string name="pay_right">立即支付</string>
     <string name="pay_choose">选择支付方式</string>

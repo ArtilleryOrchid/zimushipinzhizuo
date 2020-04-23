@@ -14,6 +14,7 @@ public class VIPActivity extends BaseActivity implements View.OnClickListener {
     private ImageButton vip_back;
     private TextView vip_pay;
     private PayWayDialog payWayDialog;
+    private TextView titleView;
 
     @Override
     public int layoutID() {
@@ -25,6 +26,8 @@ public class VIPActivity extends BaseActivity implements View.OnClickListener {
         vip_back = findViewById(R.id.vip_back);
         vip_back.setOnClickListener(this::onClick);
         vip_pay = findViewById(R.id.vip_pay);
+        titleView = findViewById(R.id.toolbar_title);
+        titleView.setText(getResources().getString(R.string.vip));
         vip_pay.setOnClickListener(this::onClick);
     }
 

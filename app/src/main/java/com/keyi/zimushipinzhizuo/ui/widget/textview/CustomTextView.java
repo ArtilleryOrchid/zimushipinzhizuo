@@ -45,7 +45,7 @@ public class CustomTextView extends AppCompatTextView {
         Typeface typeface = null;
 
         if (a.hasValue(R.styleable.CustomTextView_typeface)) {
-            int typeFaceValue = a.getInt(R.styleable.CustomTextView_typeface, -1);
+            int typeFaceValue = a.getInt(R.styleable.CustomTextView_typeface, FintsPathInfo.DEFAULT_TEXT_FINT_ATTRS);
             switch (typeFaceValue) {
                 case FintsPathInfo.DEFAULT_TEXT_FINT_ATTRS :
                     typeface = Typeface.DEFAULT;
