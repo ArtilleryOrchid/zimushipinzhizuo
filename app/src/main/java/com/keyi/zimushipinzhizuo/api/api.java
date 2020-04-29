@@ -3,6 +3,8 @@ package com.keyi.zimushipinzhizuo.api;
 import com.huopaolan.lib_core.Base.BaseEntity;
 import com.keyi.zimushipinzhizuo.bean.AppEntity;
 
+import java.util.ArrayList;
+
 import io.reactivex.Observable;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
@@ -50,5 +52,41 @@ public interface api {
      * @return
      */
     @POST("/standard/account/logout")
-    Observable<BaseEntity<AppEntity>> logout_request(@Body RequestBody body);
+    Observable<BaseEntity<Boolean>> logout_request(@Body RequestBody body);
+
+    /**
+     * 创建订单
+     *
+     * @param body
+     * @return
+     */
+    @POST("/standard/order/create")
+    Observable<BaseEntity<String>> create_pay_request(@Body RequestBody body);
+
+    /**
+     * 产品信息查询
+     *
+     * @param body
+     * @return
+     */
+    @POST("/standard/product/productList")
+    Observable<BaseEntity<ArrayList<AppEntity.Data>>> product_request(@Body RequestBody body);
+
+    /**
+     * 支付类型
+     *
+     * @param body
+     * @return
+     */
+    @POST("/standard/product/payChannel")
+    Observable<BaseEntity<ArrayList<AppEntity.Pay>>> pay_request(@Body RequestBody body);
+
+    /**
+     * 支付入口
+     *
+     * @param body
+     * @return
+     */
+    @POST("/standard/order/submitOrder")
+    Observable<BaseEntity<AppEntity.Submit>> submit_request(@Body RequestBody body);
 }

@@ -6,32 +6,28 @@ import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.huopaolan.lib_core.Base.BaseEntity;
 import com.keyi.zimushipinzhizuo.R;
 import com.keyi.zimushipinzhizuo.bean.AppEntity;
-import com.keyi.zimushipinzhizuo.compont.DaggerMineComponent;
-import com.keyi.zimushipinzhizuo.contract.MineContract;
-import com.keyi.zimushipinzhizuo.modules.MineModules;
-import com.keyi.zimushipinzhizuo.presenter.MinePresenter;
-import com.keyi.zimushipinzhizuo.ui.activity.home.HomeActivity;
+import com.keyi.zimushipinzhizuo.compont.DaggerAppComponent;
+import com.keyi.zimushipinzhizuo.contract.AppContract;
+import com.keyi.zimushipinzhizuo.modules.AppModules;
+import com.keyi.zimushipinzhizuo.presenter.AppPresenter;
 import com.keyi.zimushipinzhizuo.ui.activity.login.LoginActivity;
 import com.keyi.zimushipinzhizuo.utils.DeviceIdUtils;
 import com.keyi.zimushipinzhizuo.utils.PackageUtils;
 import com.keyi.zimushipinzhizuo.utils.SPUtils;
 import com.keyi.zimushipinzhizuo.utils.SystemUtil;
 
-public class MineActivity extends BaseActivity<MinePresenter> implements MineContract.MineIView, View.OnClickListener {
+public class MineActivity extends BaseActivity<AppPresenter> implements AppContract.AppIView, View.OnClickListener {
     private ImageView mine_back;
     private TextView login, login_vip, login_morn;
     private LinearLayout help;
@@ -92,7 +88,7 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
 
     @Override
     public void setUpDagger() {
-        DaggerMineComponent.builder().mineModules(new MineModules(this)).build().inject(this);
+        DaggerAppComponent.builder().appModules(new AppModules(this, null)).build().inject(this);
     }
 
     @Override
@@ -133,7 +129,6 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
                         login.setTextColor(color);
                         Drawable drawable = getResources().getDrawable(R.drawable.dialog_btn_agree_bg, null);
                         login.setBackground(drawable);
-                        SPUtils.getInstance().putString("login", "OFF");
                         String deviceId = DeviceIdUtils.getDeviceId(getApplication());
                         String accountId = SPUtils.getInstance().getString("accountId", "");
                         p.LogoutRequest(accountId, "ZIMUSHIPINZHIZUO_KEYI", SystemUtil.getDeviceBrand(), "", SystemUtil.getSystemModel(), "ANDROID", "", deviceId, PackageUtils.getVersionName(this));
@@ -155,14 +150,19 @@ public class MineActivity extends BaseActivity<MinePresenter> implements MineCon
     }
 
     @Override
-    public void logoutSuccess(BaseEntity<AppEntity> entity) {
+    public void AppBooleanSuccess(BaseEntity<Boolean> entity) {
         if (entity.success == true) {
             SPUtils.getInstance().putString("login", "OFF");
         }
     }
 
     @Override
-    public void logoutError(String entity) {
+    public void AppSuccess(BaseEntity<AppEntity> entity) {
+
+    }
+
+    @Override
+    public void AppError(String error) {
 
     }
 }

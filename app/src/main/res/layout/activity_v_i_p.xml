@@ -40,19 +40,19 @@
             android:layout_marginRight="@dimen/dp_6"
             android:src="@drawable/vip_left" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/along_vip"
-            android:textColor="@color/logout_color"
-            android:textSize="@dimen/sp_18" />
-
         <ImageView
             android:layout_width="@dimen/dp_28"
             android:layout_height="@dimen/dp_19"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/dp_6"
             android:src="@drawable/vip_right" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/along_vip"
+            android:textColor="@color/logout_color"
+            android:textSize="@dimen/sp_18" />
     </LinearLayout>
 
     <LinearLayout
@@ -68,22 +68,23 @@
             android:layout_marginRight="@dimen/dp_6"
             android:src="@drawable/vip_left" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/vip"
-            android:textColor="@color/logout_color"
-            android:textSize="@dimen/sp_18" />
-
         <ImageView
             android:layout_width="@dimen/dp_28"
             android:layout_height="@dimen/dp_19"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/dp_6"
             android:src="@drawable/vip_right" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vip"
+            android:textColor="@color/logout_color"
+            android:textSize="@dimen/sp_18" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/get_month"
         android:layout_width="@dimen/dp_102"
         android:layout_height="@dimen/dp_137"
         android:layout_alignParentBottom="true"
@@ -93,15 +94,17 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/one_month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_26"
             android:text="@string/vip_m"
             android:textColor="@color/vip_mo"
             android:textSize="@dimen/sp_14" />
 
         <TextView
+            android:id="@+id/one_month_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -109,9 +112,20 @@
             android:text="@string/_18_00_S"
             android:textColor="@color/yellow"
             android:textSize="@dimen/sp_24" />
+
+        <TextView
+            android:id="@+id/one_month_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="@string/_54_00"
+            android:textColor="@color/vip_mo"
+            android:textSize="@dimen/sp_10" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/get_season"
         android:layout_width="@dimen/dp_102"
         android:layout_height="@dimen/dp_137"
         android:layout_alignParentBottom="true"
@@ -121,15 +135,17 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/one_season"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_26"
             android:text="@string/vip_year"
             android:textColor="@color/vip_mo"
             android:textSize="@dimen/sp_14" />
 
         <TextView
+            android:id="@+id/one_season_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -137,9 +153,20 @@
             android:text="@string/_38_00"
             android:textColor="@color/yellow"
             android:textSize="@dimen/sp_24" />
+
+        <TextView
+            android:id="@+id/one_season_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="@string/_54_00"
+            android:textColor="@color/vip_mo"
+            android:textSize="@dimen/sp_10" />
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/get_year"
         android:layout_width="@dimen/dp_102"
         android:layout_height="@dimen/dp_137"
         android:layout_alignParentRight="true"
@@ -154,30 +181,41 @@
             android:layout_height="wrap_content"
             android:src="@drawable/tj_log" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_16"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/xstj_log" />
-
         <TextView
+            android:id="@+id/one_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dp_55"
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/vip_new"
+            android:textColor="@color/close_color"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/one_year_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_13"
             android:text="@string/_68_00"
             android:textColor="@color/close_color"
             android:textSize="@dimen/sp_24" />
 
         <TextView
+            android:id="@+id/one_year_discount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dp_28"
-            android:text="@string/vip_new"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/_54_00"
             android:textColor="@color/close_color"
-            android:textSize="@dimen/sp_14" />
-    </RelativeLayout>
+            android:textSize="@dimen/sp_10" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_16"
+            android:layout_marginTop="@dimen/sp_15"
+            android:src="@drawable/xstj_log" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/vip_pay"
@@ -192,5 +230,5 @@
         android:textColor="#ffffffff"
         android:textSize="@dimen/sp_16" />
 
-    <include layout="@layout/vip_bar" />
+    <include layout="@layout/activity_toolbar" />
 </RelativeLayout>

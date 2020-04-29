@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.huopaolan.lib_core.Base.BaseActivity;
 import com.keyi.zimushipinzhizuo.R;
-import com.keyi.zimushipinzhizuo.ui.activity.logout.UnsubscribeActivity;
+import com.keyi.zimushipinzhizuo.ui.activity.unsubscribe.UnsubscribeActivity;
 import com.keyi.zimushipinzhizuo.utils.CommonDialog;
 
 public class HelpAndFeedBackActivity extends BaseActivity implements View.OnClickListener {

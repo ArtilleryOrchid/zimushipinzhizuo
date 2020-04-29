@@ -18,12 +18,11 @@ import com.huopaolan.lib_core.Base.BaseActivity;
 import com.huopaolan.lib_core.Base.BaseEntity;
 import com.keyi.zimushipinzhizuo.R;
 import com.keyi.zimushipinzhizuo.bean.AppEntity;
-import com.keyi.zimushipinzhizuo.compont.DaggerLoginComponent;
-import com.keyi.zimushipinzhizuo.contract.LoginContract;
-import com.keyi.zimushipinzhizuo.modules.LoginModules;
-import com.keyi.zimushipinzhizuo.presenter.LoginPresenter;
+import com.keyi.zimushipinzhizuo.compont.DaggerAppComponent;
+import com.keyi.zimushipinzhizuo.contract.AppContract;
+import com.keyi.zimushipinzhizuo.modules.AppModules;
+import com.keyi.zimushipinzhizuo.presenter.AppPresenter;
 import com.keyi.zimushipinzhizuo.ui.activity.home.HomeActivity;
-import com.keyi.zimushipinzhizuo.ui.activity.mine.HtmlActivity;
 import com.keyi.zimushipinzhizuo.ui.widget.dialog.CustomDialog;
 import com.keyi.zimushipinzhizuo.ui.widget.span.CountdownButton;
 import com.keyi.zimushipinzhizuo.ui.widget.span.MyClickText;
@@ -33,7 +32,7 @@ import com.keyi.zimushipinzhizuo.utils.PackageUtils;
 import com.keyi.zimushipinzhizuo.utils.SPUtils;
 import com.keyi.zimushipinzhizuo.utils.SystemUtil;
 
-public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.LoginIView, View.OnClickListener {
+public class LoginActivity extends BaseActivity<AppPresenter> implements AppContract.AppIView, View.OnClickListener {
     private Button login_button;
     private EditText phone;
     private EditText access;
@@ -165,7 +164,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     public void setUpDagger() {
-        DaggerLoginComponent.builder().loginModules(new LoginModules(this)).build().inject(this);
+        DaggerAppComponent.builder().appModules(new AppModules(this, null)).build().inject(this);
     }
 
     @Override
@@ -242,17 +241,12 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     @Override
-    public void codeSuccess(BaseEntity<AppEntity> entity) {
+    public void AppBooleanSuccess(BaseEntity<Boolean> entity) {
 
     }
 
     @Override
-    public void codeError(String error) {
-
-    }
-
-    @Override
-    public void loginSuccess(BaseEntity<AppEntity> entity) {
+    public void AppSuccess(BaseEntity<AppEntity> entity) {
         if (entity.success == true) {
             SPUtils.getInstance().putString("login", entity.result.isNew);
             SPUtils.getInstance().putString("accountId", entity.result.accountId);
@@ -265,7 +259,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     @Override
-    public void loginError(String entity) {
+    public void AppError(String error) {
 
     }
 }

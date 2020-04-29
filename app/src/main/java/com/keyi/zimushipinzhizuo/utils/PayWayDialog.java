@@ -17,8 +17,12 @@ import android.widget.Toast;
 
 import com.keyi.zimushipinzhizuo.R;
 import com.keyi.zimushipinzhizuo.api.api;
+import com.keyi.zimushipinzhizuo.bean.AppEntity;
 import com.keyi.zimushipinzhizuo.pay.alipay.PayDemoActivity;
 import com.keyi.zimushipinzhizuo.pay.wxapi.WXEntryActivity;
+import com.keyi.zimushipinzhizuo.presenter.ProductPresenter;
+
+import java.util.ArrayList;
 
 public class PayWayDialog extends Dialog implements View.OnClickListener {
 
@@ -34,16 +38,27 @@ public class PayWayDialog extends Dialog implements View.OnClickListener {
 
     private Context context;
 
+    private ArrayList<AppEntity.Pay> result;
+
+    private ProductPresenter p;
+
     private static int PAY_TYPE = api.ALIPAY;
+
+    public static String ALIPAY_TYPE = null;
+    public static String WECHAT_TYPE = null;
 
     /**
      * 如果ifRecharge 传入true 则是充值,就隐藏掉我的钱包, 否则则显示
      *
      * @param context
+     * @param result
+     * @param p
      * @param themeResId
      */
-    public PayWayDialog(Context context, int themeResId) {
+    public PayWayDialog(Context context, ArrayList<AppEntity.Pay> result, ProductPresenter p, int themeResId) {
         super(context, themeResId);
+        this.result = result;
+        this.p = p;
         this.context = context;
     }
 
@@ -73,6 +88,7 @@ public class PayWayDialog extends Dialog implements View.OnClickListener {
         close_pay.setOnClickListener(this::onClick);
         pya_button.setOnClickListener(this::onClick);
         PAY_TYPE = api.ALIPAY;
+        ALIPAY_TYPE = result.get(1).type;
     }
 
 
@@ -86,6 +102,8 @@ public class PayWayDialog extends Dialog implements View.OnClickListener {
     }
 
     public void onClick(View view) {
+        String accountId = SPUtils.getInstance().getString("accountId", "");
+        String orderId = SPUtils.getInstance().getString("orderId", "");
         switch (view.getId()) {
             case R.id.close_pay:
                 PAY_TYPE = api.ALIPAY;
@@ -94,20 +112,22 @@ public class PayWayDialog extends Dialog implements View.OnClickListener {
             case R.id.zhi_fu_bao_pay:
                 choose_zhi_fu_bao.setChecked(true);
                 choose_wechat.setChecked(false);
+                ALIPAY_TYPE = result.get(1).type;
                 PAY_TYPE = api.ALIPAY;
                 break;
             case R.id.wechat_pay:
                 choose_zhi_fu_bao.setChecked(false);
                 choose_wechat.setChecked(true);
+                WECHAT_TYPE = result.get(0).type;
                 PAY_TYPE = api.WECHAT;
                 break;
             case R.id.pya_button:
                 switch (PAY_TYPE) {
                     case api.ALIPAY:
-                        context.startActivity(new Intent(context, PayDemoActivity.class));
+                        p.SubmitRequest(accountId, "", "ZIMUSHIPINZHIZUO_KEYI", orderId, ALIPAY_TYPE);
                         break;
                     case api.WECHAT:
-                        context.startActivity(new Intent(context, WXEntryActivity.class));
+                        p.SubmitRequest(accountId, "", "ZIMUSHIPINZHIZUO_KEYI", orderId, WECHAT_TYPE);
                         break;
                 }
                 break;

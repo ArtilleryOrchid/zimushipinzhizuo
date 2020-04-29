@@ -3,7 +3,6 @@ package com.keyi.zimushipinzhizuo.ui.activity.mine;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,13 +10,13 @@ import com.huopaolan.lib_core.Base.BaseActivity;
 import com.huopaolan.lib_core.Base.BaseEntity;
 import com.keyi.zimushipinzhizuo.R;
 import com.keyi.zimushipinzhizuo.bean.AppEntity;
-import com.keyi.zimushipinzhizuo.compont.DaggerAppMessageComponent;
-import com.keyi.zimushipinzhizuo.contract.AppMessageContract;
-import com.keyi.zimushipinzhizuo.modules.AppMessageModules;
-import com.keyi.zimushipinzhizuo.presenter.AppMessagePresenter;
+import com.keyi.zimushipinzhizuo.compont.DaggerAppComponent;
+import com.keyi.zimushipinzhizuo.contract.AppContract;
+import com.keyi.zimushipinzhizuo.modules.AppModules;
+import com.keyi.zimushipinzhizuo.presenter.AppPresenter;
 import com.keyi.zimushipinzhizuo.utils.PackageUtils;
 
-public class About_US_Activity extends BaseActivity<AppMessagePresenter> implements AppMessageContract.AppMessageIView, View.OnClickListener {
+public class About_US_Activity extends BaseActivity<AppPresenter> implements AppContract.AppIView, View.OnClickListener {
     private ImageButton about_us_back;
     private TextView user_agreement, privacy_policy, app_version;
     private Intent intent;
@@ -46,7 +45,7 @@ public class About_US_Activity extends BaseActivity<AppMessagePresenter> impleme
 
     @Override
     public void setUpDagger() {
-        DaggerAppMessageComponent.builder().appMessageModules(new AppMessageModules(this)).build().inject(this);
+        DaggerAppComponent.builder().appModules(new AppModules(this, null)).build().inject(this);
     }
 
     @Override
@@ -80,12 +79,17 @@ public class About_US_Activity extends BaseActivity<AppMessagePresenter> impleme
     }
 
     @Override
-    public void AppMessageSuccess(BaseEntity<AppEntity> entity) {
+    public void AppBooleanSuccess(BaseEntity<Boolean> entity) {
+
+    }
+
+    @Override
+    public void AppSuccess(BaseEntity<AppEntity> entity) {
         Toast.makeText(this, "" + entity.result.versionInfoVo.content, Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void AppMessageError(String error) {
+    public void AppError(String error) {
 
     }
 }

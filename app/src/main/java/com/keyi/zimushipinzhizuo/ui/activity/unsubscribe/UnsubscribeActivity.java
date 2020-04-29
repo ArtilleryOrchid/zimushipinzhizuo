@@ -1,4 +1,4 @@
-package com.keyi.zimushipinzhizuo.ui.activity.logout;
+package com.keyi.zimushipinzhizuo.ui.activity.unsubscribe;
 
 
 import android.view.View;

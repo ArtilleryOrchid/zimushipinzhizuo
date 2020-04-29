@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorDark"
     android:orientation="vertical"
-    tools:context=".ui.activity.logout.UnsubscribeActivity">
+    tools:context=".ui.activity.unsubscribe.UnsubscribeActivity">
 
     <TextView
         android:id="@+id/close_logout"
